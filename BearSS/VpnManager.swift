@@ -1,6 +1,6 @@
 //
 //  VpnManager.swift
-//  BearFree
+//  TenonVPN
 //
 //  Created by zly on 2019/4/17.
 //  Copyright © 2019 zly. All rights reserved.
@@ -94,9 +94,9 @@ extension VpnManager{
     fileprivate func createProviderManager() -> NETunnelProviderManager {
         let manager = NETunnelProviderManager()
         let conf = NETunnelProviderProtocol()
-        conf.serverAddress = "BearFree"
+        conf.serverAddress = "TenonVPN"
         manager.protocolConfiguration = conf
-        manager.localizedDescription = "BearFree"
+        manager.localizedDescription = "TenonVPN"
         return manager
     }
     

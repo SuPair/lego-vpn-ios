@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1020"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,10 +15,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18F3C6402293D7F800D79C4A"
+               BuildableName = "freeWidget.appex"
+               BlueprintName = "freeWidget"
+               ReferencedContainer = "container:TenonVPN.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "18E914182266C7B4005E6027"
-               BuildableName = "BearFree.app"
-               BlueprintName = "BearFree"
-               ReferencedContainer = "container:BearFree.xcodeproj">
+               BuildableName = "TenonVPN.app"
+               BlueprintName = "TenonVPN"
+               ReferencedContainer = "container:TenonVPN.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +43,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18E9142C2266C7B5005E6027"
-               BuildableName = "BearFreeTests.xctest"
-               BlueprintName = "BearFreeTests"
-               ReferencedContainer = "container:BearFree.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18E914182266C7B4005E6027"
-            BuildableName = "BearFree.app"
-            BlueprintName = "BearFree"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BlueprintIdentifier = "18F3C6402293D7F800D79C4A"
+            BuildableName = "freeWidget.appex"
+            BlueprintName = "freeWidget"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -53,22 +58,23 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18E914182266C7B4005E6027"
-            BuildableName = "BearFree.app"
-            BlueprintName = "BearFree"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BuildableName = "TenonVPN.app"
+            BlueprintName = "TenonVPN"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,15 +85,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18E914182266C7B4005E6027"
-            BuildableName = "BearFree.app"
-            BlueprintName = "BearFree"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BuildableName = "TenonVPN.app"
+            BlueprintName = "TenonVPN"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

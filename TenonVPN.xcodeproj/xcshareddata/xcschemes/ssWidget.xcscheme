@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18F3C6402293D7F800D79C4A"
-               BuildableName = "freeWidget.appex"
-               BlueprintName = "freeWidget"
-               ReferencedContainer = "container:BearFree.xcodeproj">
+               BlueprintIdentifier = "18F3C62B2293D7BB00D79C4A"
+               BuildableName = "ssWidget.appex"
+               BlueprintName = "ssWidget"
+               ReferencedContainer = "container:TenonVPN.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18E914182266C7B4005E6027"
-               BuildableName = "BearFree.app"
-               BlueprintName = "BearFree"
-               ReferencedContainer = "container:BearFree.xcodeproj">
+               BuildableName = "TenonVPN.app"
+               BlueprintName = "TenonVPN"
+               ReferencedContainer = "container:TenonVPN.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18F3C6402293D7F800D79C4A"
-            BuildableName = "freeWidget.appex"
-            BlueprintName = "freeWidget"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BlueprintIdentifier = "18F3C62B2293D7BB00D79C4A"
+            BuildableName = "ssWidget.appex"
+            BlueprintName = "ssWidget"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18E914182266C7B4005E6027"
-            BuildableName = "BearFree.app"
-            BlueprintName = "BearFree"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BuildableName = "TenonVPN.app"
+            BlueprintName = "TenonVPN"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -92,9 +92,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18E914182266C7B4005E6027"
-            BuildableName = "BearFree.app"
-            BlueprintName = "BearFree"
-            ReferencedContainer = "container:BearFree.xcodeproj">
+            BuildableName = "TenonVPN.app"
+            BlueprintName = "TenonVPN"
+            ReferencedContainer = "container:TenonVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

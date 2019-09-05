@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  BearFree
+//  TenonVPN
 //
 //  Created by zly on 2019/4/17.
 //  Copyright © 2019 zly. All rights reserved.

@@ -140,7 +140,7 @@
 		18E914422266C9B3005E6027 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		18E914442266C9B3005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E914452266C9B3005E6027 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
-		18E9144F22671181005E6027 /* BearSS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BearSS.entitlements; sourceTree = "<group>"; };
+		18E9144F22671181005E6027 /* Tenon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tenon.entitlements; sourceTree = "<group>"; };
 		18E9147322671B28005E6027 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		18E9149B2267220B005E6027 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		18E9149D22672644005E6027 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -228,8 +228,8 @@
 		18E914102266C7B4005E6027 = {
 			isa = PBXGroup;
 			children = (
-				18E9141B2266C7B4005E6027 /* BearSS */,
-				18E914302266C7B5005E6027 /* BearSSTests */,
+				18E9141B2266C7B4005E6027 /* Tenon */,
+				18E914302266C7B5005E6027 /* TenonTests */,
 				18E914412266C9B3005E6027 /* PacketTunnel */,
 				18F3C6432293D7F800D79C4A /* freeWidget */,
 				18E9141A2266C7B4005E6027 /* Products */,
@@ -248,11 +248,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18E9141B2266C7B4005E6027 /* BearSS */ = {
+		18E9141B2266C7B4005E6027 /* Tenon */ = {
 			isa = PBXGroup;
 			children = (
 				18E9149B2267220B005E6027 /* NEKitRule.conf */,
-				18E9144F22671181005E6027 /* BearSS.entitlements */,
+				18E9144F22671181005E6027 /* Tenon.entitlements */,
 				18E9141C2266C7B4005E6027 /* AppDelegate.swift */,
 				18E9141E2266C7B4005E6027 /* ViewController.swift */,
 				18E9147322671B28005E6027 /* VpnManager.swift */,
@@ -261,16 +261,16 @@
 				18E914252266C7B5005E6027 /* LaunchScreen.storyboard */,
 				18E914282266C7B5005E6027 /* Info.plist */,
 			);
-			path = BearSS;
+			path = Tenon;
 			sourceTree = "<group>";
 		};
-		18E914302266C7B5005E6027 /* BearSSTests */ = {
+		18E914302266C7B5005E6027 /* TenonTests */ = {
 			isa = PBXGroup;
 			children = (
 				18E914312266C7B5005E6027 /* BearSSTests.swift */,
 				18E914332266C7B5005E6027 /* Info.plist */,
 			);
-			path = BearSSTests;
+			path = TenonTests;
 			sourceTree = "<group>";
 		};
 		18E914412266C9B3005E6027 /* PacketTunnel */ = {
@@ -709,14 +709,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BearSS/BearSS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT6VFF8ZHB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BearSS/Info.plist;
+				INFOPLIST_FILE = Tenon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -734,14 +734,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BearSS/BearSS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT6VFF8ZHB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BearSS/Info.plist;
+				INFOPLIST_FILE = Tenon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,7 +761,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT6VFF8ZHB;
-				INFOPLIST_FILE = BearSSTests/Info.plist;
+				INFOPLIST_FILE = TenonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,7 +782,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BT6VFF8ZHB;
-				INFOPLIST_FILE = BearSSTests/Info.plist;
+				INFOPLIST_FILE = TenonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

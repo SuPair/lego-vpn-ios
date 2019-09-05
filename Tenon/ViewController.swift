@@ -19,7 +19,7 @@ class ViewController: FormViewController {
     var secondSection : Section = Section()
     
     var switchRow : SwitchRow = SwitchRow("switchRowTag"){
-        $0.title = "熊出塞"
+        $0.title = "TenonVPN"
     }
 
     var status: VPNStatus {

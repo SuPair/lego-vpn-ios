@@ -12,7 +12,6 @@
 		18E914222266C7B4005E6027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E914202266C7B4005E6027 /* Main.storyboard */; };
 		18E914242266C7B5005E6027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E914232266C7B5005E6027 /* Assets.xcassets */; };
 		18E914272266C7B5005E6027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E914252266C7B5005E6027 /* LaunchScreen.storyboard */; };
-		18E914322266C7B5005E6027 /* BearSSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E914312266C7B5005E6027 /* BearSSTests.swift */; };
 		18E914432266C9B3005E6027 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E914422266C9B3005E6027 /* PacketTunnelProvider.swift */; };
 		18E914482266C9B3005E6027 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18E914402266C9B3005E6027 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18E9147422671B28005E6027 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9147322671B28005E6027 /* VpnManager.swift */; };
@@ -66,13 +65,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		18E9142E2266C7B5005E6027 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18E914112266C7B4005E6027 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18E914182266C7B4005E6027;
-			remoteInfo = BearSS;
-		};
 		18E914462266C9B3005E6027 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18E914112266C7B4005E6027 /* Project object */;
@@ -133,9 +125,6 @@
 		18E914232266C7B5005E6027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18E914262266C7B5005E6027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18E914282266C7B5005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18E9142D2266C7B5005E6027 /* TenonVPNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenonVPNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18E914312266C7B5005E6027 /* BearSSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearSSTests.swift; sourceTree = "<group>"; };
-		18E914332266C7B5005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E914402266C9B3005E6027 /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E914422266C9B3005E6027 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		18E914442266C9B3005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,13 +174,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18E9142A2266C7B5005E6027 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18E9143D2266C9B3005E6027 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				18E9141B2266C7B4005E6027 /* Tenon */,
-				18E914302266C7B5005E6027 /* TenonTests */,
 				18E914412266C9B3005E6027 /* PacketTunnel */,
 				18F3C6432293D7F800D79C4A /* freeWidget */,
 				18E9141A2266C7B4005E6027 /* Products */,
@@ -241,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				18E914192266C7B4005E6027 /* TenonVPN.app */,
-				18E9142D2266C7B5005E6027 /* TenonVPNTests.xctest */,
 				18E914402266C9B3005E6027 /* PacketTunnel.appex */,
 				18F3C6412293D7F800D79C4A /* freeWidget.appex */,
 			);
@@ -262,15 +242,6 @@
 				18E914282266C7B5005E6027 /* Info.plist */,
 			);
 			path = Tenon;
-			sourceTree = "<group>";
-		};
-		18E914302266C7B5005E6027 /* TenonTests */ = {
-			isa = PBXGroup;
-			children = (
-				18E914312266C7B5005E6027 /* BearSSTests.swift */,
-				18E914332266C7B5005E6027 /* Info.plist */,
-			);
-			path = TenonTests;
 			sourceTree = "<group>";
 		};
 		18E914412266C9B3005E6027 /* PacketTunnel */ = {
@@ -339,24 +310,6 @@
 			productReference = 18E914192266C7B4005E6027 /* TenonVPN.app */;
 			productType = "com.apple.product-type.application";
 		};
-		18E9142C2266C7B5005E6027 /* TenonVPNTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18E914392266C7B5005E6027 /* Build configuration list for PBXNativeTarget "TenonVPNTests" */;
-			buildPhases = (
-				18E914292266C7B5005E6027 /* Sources */,
-				18E9142A2266C7B5005E6027 /* Frameworks */,
-				18E9142B2266C7B5005E6027 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				18E9142F2266C7B5005E6027 /* PBXTargetDependency */,
-			);
-			name = TenonVPNTests;
-			productName = BearSSTests;
-			productReference = 18E9142D2266C7B5005E6027 /* TenonVPNTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		18E9143F2266C9B3005E6027 /* PacketTunnel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18E914492266C9B3005E6027 /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
@@ -415,10 +368,6 @@
 							};
 						};
 					};
-					18E9142C2266C7B5005E6027 = {
-						CreatedOnToolsVersion = 10.2;
-						TestTargetID = 18E914182266C7B4005E6027;
-					};
 					18E9143F2266C9B3005E6027 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
@@ -460,7 +409,6 @@
 			projectRoot = "";
 			targets = (
 				18E914182266C7B4005E6027 /* TenonVPN */,
-				18E9142C2266C7B5005E6027 /* TenonVPNTests */,
 				18E9143F2266C9B3005E6027 /* PacketTunnel */,
 				18F3C6402293D7F800D79C4A /* freeWidget */,
 			);
@@ -476,13 +424,6 @@
 				18E9149C2267220B005E6027 /* NEKitRule.conf in Resources */,
 				18E914242266C7B5005E6027 /* Assets.xcassets in Resources */,
 				18E914222266C7B4005E6027 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18E9142B2266C7B5005E6027 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,14 +456,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18E914292266C7B5005E6027 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18E914322266C7B5005E6027 /* BearSSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18E9143C2266C9B3005E6027 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,11 +476,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		18E9142F2266C7B5005E6027 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18E914182266C7B4005E6027 /* TenonVPN */;
-			targetProxy = 18E9142E2266C7B5005E6027 /* PBXContainerItemProxy */;
-		};
 		18E914472266C9B3005E6027 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18E9143F2266C9B3005E6027 /* PacketTunnel */;
@@ -754,48 +682,6 @@
 			};
 			name = Release;
 		};
-		18E9143A2266C7B5005E6027 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
-				INFOPLIST_FILE = TenonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zly.BearSSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenonVPN.app/TenonVPN";
-			};
-			name = Debug;
-		};
-		18E9143B2266C7B5005E6027 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
-				INFOPLIST_FILE = TenonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zly.BearSSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenonVPN.app/TenonVPN";
-			};
-			name = Release;
-		};
 		18E9144A2266C9B3005E6027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -917,15 +803,6 @@
 			buildConfigurations = (
 				18E914372266C7B5005E6027 /* Debug */,
 				18E914382266C7B5005E6027 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18E914392266C7B5005E6027 /* Build configuration list for PBXNativeTarget "TenonVPNTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18E9143A2266C7B5005E6027 /* Debug */,
-				18E9143B2266C7B5005E6027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

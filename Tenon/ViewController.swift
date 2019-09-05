@@ -41,7 +41,7 @@ class ViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestBaidu()
-        self.title = "Bear Free"
+        self.title = "TenonVPN"
         self.form +++ self.firstSection
             <<< TextRow("IP"){ row in
                 row.title = "IP"

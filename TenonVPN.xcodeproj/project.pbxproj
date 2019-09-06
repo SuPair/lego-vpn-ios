@@ -25,6 +25,15 @@
 		18F3C6512293DBF200D79C4A /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9147322671B28005E6027 /* VpnManager.swift */; };
 		18F3C6522293E40400D79C4A /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9149B2267220B005E6027 /* NEKitRule.conf */; };
 		18F3C6552293EEBF00D79C4A /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9149D22672644005E6027 /* NetworkExtension.framework */; };
+		5DA1BE6BD0C526BF119CCCE7 /* Pods_PacketTunnel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74E606D8AE4BE562B38CEF4 /* Pods_PacketTunnel.framework */; };
+		D316BB74232210C5008C8FD3 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316BB72232210C5008C8FD3 /* HomePageViewController.swift */; };
+		D316BB75232210C5008C8FD3 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BB73232210C5008C8FD3 /* HomePageViewController.xib */; };
+		D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316BC1E23224D86008C8FD3 /* ChoseCountryViewController.swift */; };
+		D316BC2123224D86008C8FD3 /* ChoseCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BC1F23224D86008C8FD3 /* ChoseCountryViewController.xib */; };
+		D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316BC2223224D97008C8FD3 /* AcountSetViewController.swift */; };
+		D316BC2523224D97008C8FD3 /* AcountSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */; };
+		D316BC2823224F24008C8FD3 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */; };
+		D316BC2923224F24008C8FD3 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */; };
 		D33FB664231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB665231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */; };
@@ -62,6 +71,8 @@
 		D33FB693231F94AF004ECA2A /* Sodium.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67B231F8B15004ECA2A /* Sodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB694231F94AF004ECA2A /* tun2socks.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67E231F8B1B004ECA2A /* tun2socks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB695231F94AF004ECA2A /* Yaml.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB681231F8B23004ECA2A /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */; };
+		FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +150,22 @@
 		18F3C6472293D7F800D79C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		18F3C6492293D7F800D79C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F3C6502293D85D00D79C4A /* freeWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = freeWidget.entitlements; sourceTree = "<group>"; };
+		2F2DE645899F3ED7E129742A /* Pods-PacketTunnel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.debug.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.debug.xcconfig"; sourceTree = "<group>"; };
+		4B0BC1E9EDCB1216E4A46B87 /* Pods-freeWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeWidget.release.xcconfig"; path = "Target Support Files/Pods-freeWidget/Pods-freeWidget.release.xcconfig"; sourceTree = "<group>"; };
+		807D47F7956E953C8F94626F /* Pods-freeWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeWidget.debug.xcconfig"; path = "Target Support Files/Pods-freeWidget/Pods-freeWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		86B2E4FEE8C0A80DF8D4AED2 /* Pods-TenonVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenonVPN.debug.xcconfig"; path = "Target Support Files/Pods-TenonVPN/Pods-TenonVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		891426C526BC0510EF259CE2 /* Pods-TenonVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenonVPN.release.xcconfig"; path = "Target Support Files/Pods-TenonVPN/Pods-TenonVPN.release.xcconfig"; sourceTree = "<group>"; };
+		9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74E606D8AE4BE562B38CEF4 /* Pods_PacketTunnel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketTunnel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenonVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D316BB72232210C5008C8FD3 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		D316BB73232210C5008C8FD3 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		D316BC1E23224D86008C8FD3 /* ChoseCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCountryViewController.swift; sourceTree = "<group>"; };
+		D316BC1F23224D86008C8FD3 /* ChoseCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoseCountryViewController.xib; sourceTree = "<group>"; };
+		D316BC2223224D97008C8FD3 /* AcountSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountSetViewController.swift; sourceTree = "<group>"; };
+		D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcountSetViewController.xib; sourceTree = "<group>"; };
+		D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D33FB669231F8AD9004ECA2A /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
@@ -151,6 +178,7 @@
 		D33FB67E231F8B1B004ECA2A /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
 		D33FB681231F8B23004ECA2A /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		D33FB684231F8F03004ECA2A /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +199,7 @@
 				D33FB685231F8F03004ECA2A /* Eureka.framework in Frameworks */,
 				D33FB673231F8AFF004ECA2A /* MMDB.framework in Frameworks */,
 				D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */,
+				DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +220,7 @@
 				D33FB686231F8F03004ECA2A /* Eureka.framework in Frameworks */,
 				D33FB674231F8AFF004ECA2A /* MMDB.framework in Frameworks */,
 				D33FB668231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */,
+				5DA1BE6BD0C526BF119CCCE7 /* Pods_PacketTunnel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +231,7 @@
 				D33FB687231F8F03004ECA2A /* Eureka.framework in Frameworks */,
 				18F3C6422293D7F800D79C4A /* NotificationCenter.framework in Frameworks */,
 				18F3C6552293EEBF00D79C4A /* NetworkExtension.framework in Frameworks */,
+				FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +246,7 @@
 				18F3C6432293D7F800D79C4A /* freeWidget */,
 				18E9141A2266C7B4005E6027 /* Products */,
 				AE2E93114404A35E87606173 /* Frameworks */,
+				735D07FE8FA3748ADF8684DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +272,14 @@
 				18E914232266C7B5005E6027 /* Assets.xcassets */,
 				18E914252266C7B5005E6027 /* LaunchScreen.storyboard */,
 				18E914282266C7B5005E6027 /* Info.plist */,
+				D316BB72232210C5008C8FD3 /* HomePageViewController.swift */,
+				D316BB73232210C5008C8FD3 /* HomePageViewController.xib */,
+				D316BC1E23224D86008C8FD3 /* ChoseCountryViewController.swift */,
+				D316BC1F23224D86008C8FD3 /* ChoseCountryViewController.xib */,
+				D316BC2223224D97008C8FD3 /* AcountSetViewController.swift */,
+				D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */,
+				D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */,
+				D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */,
 			);
 			path = Tenon;
 			sourceTree = "<group>";
@@ -265,6 +305,19 @@
 			path = freeWidget;
 			sourceTree = "<group>";
 		};
+		735D07FE8FA3748ADF8684DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F2DE645899F3ED7E129742A /* Pods-PacketTunnel.debug.xcconfig */,
+				ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */,
+				86B2E4FEE8C0A80DF8D4AED2 /* Pods-TenonVPN.debug.xcconfig */,
+				891426C526BC0510EF259CE2 /* Pods-TenonVPN.release.xcconfig */,
+				807D47F7956E953C8F94626F /* Pods-freeWidget.debug.xcconfig */,
+				4B0BC1E9EDCB1216E4A46B87 /* Pods-freeWidget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AE2E93114404A35E87606173 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +335,9 @@
 				D33FB67E231F8B1B004ECA2A /* tun2socks.framework */,
 				D33FB681231F8B23004ECA2A /* Yaml.framework */,
 				18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */,
+				B74E606D8AE4BE562B38CEF4 /* Pods_PacketTunnel.framework */,
+				C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */,
+				9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18E914362266C7B5005E6027 /* Build configuration list for PBXNativeTarget "TenonVPN" */;
 			buildPhases = (
+				36C190365D6337FAD64BD7C8 /* [CP] Check Pods Manifest.lock */,
 				18E914152266C7B4005E6027 /* Sources */,
 				18E914162266C7B4005E6027 /* Frameworks */,
 				18E914172266C7B4005E6027 /* Resources */,
@@ -314,6 +371,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18E914492266C9B3005E6027 /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
 			buildPhases = (
+				AF045ECD36C4131B344D57B2 /* [CP] Check Pods Manifest.lock */,
 				18E9143C2266C9B3005E6027 /* Sources */,
 				18E9143D2266C9B3005E6027 /* Frameworks */,
 				18E9143E2266C9B3005E6027 /* Resources */,
@@ -331,6 +389,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F3C64D2293D7F800D79C4A /* Build configuration list for PBXNativeTarget "freeWidget" */;
 			buildPhases = (
+				DE76389D333BA0E89B3BE911 /* [CP] Check Pods Manifest.lock */,
 				18F3C63D2293D7F800D79C4A /* Sources */,
 				18F3C63E2293D7F800D79C4A /* Frameworks */,
 				18F3C63F2293D7F800D79C4A /* Resources */,
@@ -420,9 +479,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D316BC2923224F24008C8FD3 /* CountryTableViewCell.xib in Resources */,
+				D316BC2123224D86008C8FD3 /* ChoseCountryViewController.xib in Resources */,
 				18E914272266C7B5005E6027 /* LaunchScreen.storyboard in Resources */,
+				D316BB75232210C5008C8FD3 /* HomePageViewController.xib in Resources */,
 				18E9149C2267220B005E6027 /* NEKitRule.conf in Resources */,
 				18E914242266C7B5005E6027 /* Assets.xcassets in Resources */,
+				D316BC2523224D97008C8FD3 /* AcountSetViewController.xib in Resources */,
 				18E914222266C7B4005E6027 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,13 +508,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36C190365D6337FAD64BD7C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TenonVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF045ECD36C4131B344D57B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PacketTunnel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE76389D333BA0E89B3BE911 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freeWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18E914152266C7B4005E6027 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D316BB74232210C5008C8FD3 /* HomePageViewController.swift in Sources */,
+				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
+				D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */,
 				18E9141D2266C7B4005E6027 /* AppDelegate.swift in Sources */,
+				D316BC2823224F24008C8FD3 /* CountryTableViewCell.swift in Sources */,
 				18E9147422671B28005E6027 /* VpnManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +770,7 @@
 		};
 		18E914372266C7B5005E6027 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B2E4FEE8C0A80DF8D4AED2 /* Pods-TenonVPN.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -652,6 +789,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -659,6 +797,7 @@
 		};
 		18E914382266C7B5005E6027 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 891426C526BC0510EF259CE2 /* Pods-TenonVPN.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -677,6 +816,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -684,6 +824,7 @@
 		};
 		18E9144A2266C9B3005E6027 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2DE645899F3ED7E129742A /* Pods-PacketTunnel.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
@@ -710,6 +851,7 @@
 		};
 		18E9144B2266C9B3005E6027 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
@@ -736,6 +878,7 @@
 		};
 		18F3C64E2293D7F800D79C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807D47F7956E953C8F94626F /* Pods-freeWidget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;
@@ -762,6 +905,7 @@
 		};
 		18F3C64F2293D7F800D79C4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B0BC1E9EDCB1216E4A46B87 /* Pods-freeWidget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;

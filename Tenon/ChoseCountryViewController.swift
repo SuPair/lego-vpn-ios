@@ -9,7 +9,7 @@
 import UIKit
 
 typealias  block = (String,String,String) -> ()
-class ChoseCountryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ChoseCountryViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var callBackBlk : block?
     var countryCode:[String] = ["America", "Singapore", "Brazil","Germany","France","Korea", "Japan", "Canada","Australia","Hong Kong", "India", "England"]
@@ -17,7 +17,7 @@ class ChoseCountryViewController: UIViewController,UITableViewDataSource,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.addNavigationView()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.loadCell("CountryTableViewCell")

@@ -29,15 +29,22 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-yj-qMI">
                         <rect key="frame" x="64" y="15" width="291" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.035294117649999998" green="0.87058823529999996" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8z-Bn-m4u">
                         <rect key="frame" x="64" y="35" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.035294117649999998" green="0.87058823529999996" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCu-hP-axk">
+                        <rect key="frame" x="0.0" y="68.5" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="UWs-wC-3Tx"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ngX-yj-qMI" firstAttribute="centerY" secondItem="7Ci-hG-OfO" secondAttribute="centerY" id="933-tO-Cer"/>
@@ -45,11 +52,14 @@
                     <constraint firstAttribute="bottom" secondItem="7Ci-hG-OfO" secondAttribute="bottom" constant="14.5" id="IK1-dj-Qcd"/>
                     <constraint firstItem="7Ci-hG-OfO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="KzA-31-F8d"/>
                     <constraint firstItem="i8z-Bn-m4u" firstAttribute="top" secondItem="ngX-yj-qMI" secondAttribute="bottom" constant="0.5" id="L24-Dq-p0K"/>
+                    <constraint firstAttribute="trailing" secondItem="qCu-hP-axk" secondAttribute="trailing" id="M5y-oU-jHg"/>
                     <constraint firstItem="7Ci-hG-OfO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="R7C-Om-Jnw"/>
                     <constraint firstAttribute="trailing" secondItem="ngX-yj-qMI" secondAttribute="trailing" constant="20" id="Rp5-ZL-90d"/>
+                    <constraint firstAttribute="bottom" secondItem="qCu-hP-axk" secondAttribute="bottom" id="T5z-AF-xaf"/>
                     <constraint firstItem="ngX-yj-qMI" firstAttribute="leading" secondItem="7Ci-hG-OfO" secondAttribute="trailing" constant="8" id="UBT-hN-Zg7"/>
                     <constraint firstItem="ngX-yj-qMI" firstAttribute="top" secondItem="7Ci-hG-OfO" secondAttribute="top" id="Y7N-jj-cyN"/>
                     <constraint firstItem="i8z-Bn-m4u" firstAttribute="leading" secondItem="7Ci-hG-OfO" secondAttribute="trailing" constant="8" id="baQ-S6-qeu"/>
+                    <constraint firstItem="qCu-hP-axk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ffM-g1-cBj"/>
                     <constraint firstItem="7Ci-hG-OfO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="mrO-Dr-nZq"/>
                     <constraint firstItem="7Ci-hG-OfO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pj3-Mk-63B"/>
                 </constraints>

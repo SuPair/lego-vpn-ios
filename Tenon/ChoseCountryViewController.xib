@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-bl-ncf">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="kAs-Zr-Nd3"/>
@@ -32,7 +32,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="c2d-bl-ncf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1cj-zp-0h4"/>
+                <constraint firstItem="c2d-bl-ncf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="1cj-zp-0h4"/>
                 <constraint firstItem="c2d-bl-ncf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AfS-4T-EyV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c2d-bl-ncf" secondAttribute="trailing" id="Jik-qd-IXO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c2d-bl-ncf" secondAttribute="bottom" id="lAP-5c-11J"/>

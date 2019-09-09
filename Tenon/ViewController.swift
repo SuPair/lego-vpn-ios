@@ -10,8 +10,7 @@ import UIKit
 import NetworkExtension
 import Eureka
 
-
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     @IBOutlet weak var btnAccount: UIButton!
     @IBOutlet weak var btnConnect: UIButton!
     @IBOutlet weak var btnChoseCountry: UIButton!
@@ -20,8 +19,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.requestBaidu()
         self.title = "TenonVPN"
+        self.addNavigationView()
+        self.hiddenBackBtn(bHidden: true)
+        self.navigationController?.navigationBar.isHidden = true
         self.btnConnect.layer.masksToBounds = true
         self.btnConnect.layer.cornerRadius = self.btnConnect.frame.width/2
         self.btnAccount.layer.masksToBounds = true
@@ -48,16 +49,6 @@ class ViewController: UIViewController {
         acountSet.title = "Account Setting"
         self.navigationController?.pushViewController(acountSet, animated: true)
         
-    }
-    // 发起一个网络请求 获取系统网络访问权限
-    func requestBaidu() {
-        let url : URL = URL(string:"https://m.baidu.com")!
-        let request : URLRequest = URLRequest(url: url)
-        let session : URLSession = URLSession.shared
-        let task : URLSessionDataTask = session.dataTask(with: request) { (data, response, error) in
-        
-        }
-        task.resume()
     }
     
     

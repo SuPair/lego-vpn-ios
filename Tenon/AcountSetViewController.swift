@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AcountSetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class AcountSetViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var vwMiddle: UIView!
     
     @IBOutlet weak var lbPrivateKey: UILabel!
@@ -19,8 +19,8 @@ class AcountSetViewController: UIViewController,UITableViewDelegate,UITableViewD
     var array: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.addNavigationView()
         self.lbPrivateKey.text = "e16b61208d000580805cfd62d6247563208b50510ee241d18f7ef36d280df213"
         self.lbAccountAddress.text = "1E79BfxiDFMXRGSsX2sx2v1vEoc5H4QtE6"
         self.tableView.delegate = self
@@ -28,10 +28,12 @@ class AcountSetViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.tableView.loadCell("AccountSetTableViewCell")
         self.vwMiddle.layer.masksToBounds = true
         self.vwMiddle.layer.cornerRadius = 8
+        self.vwMiddle.backgroundColor = APP_COLOR
         self.array.append("123")
         self.array.append("123")
         self.array.append("123")
         self.tableView.reloadData()
+        
     }
 
 
@@ -51,10 +53,12 @@ class AcountSetViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:AccountSetTableViewCell = tableView.reUseCell("AccountSetTableViewCell") as! AccountSetTableViewCell
         if indexPath.row%2 != 0 {
-            cell.backgroundColor = UIColor(red: 9, green: 222, blue: 202, alpha: 1)
+            cell.backgroundColor = APP_COLOR
         }else{
             cell.backgroundColor = UIColor.white
         }
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 8
         cell.lbDateTime.text = "20190905 11:01:20"
         cell.lbType.text = "TRAN"
         cell.lbAccount.text = "6DCASDLKJQWIOEDANSLDJLKJQWLDNALSJD37"

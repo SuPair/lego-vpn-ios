@@ -1,3 +1,18 @@
-PODFILE CHECKSUM: d321e010324d69da798a7038443b877b35cb9e72
+PODS:
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YYKit
+
+SPEC CHECKSUMS:
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: fa64cc55020998d4e5e430da6c0532851e10d807
 
 COCOAPODS: 1.7.5

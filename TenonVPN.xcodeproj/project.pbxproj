@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,35 @@
 		D3204B522325EA7A002ECB69 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */; };
 		D3204B5523261E5D002ECB69 /* AccountSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */; };
 		D3204B5623261E5D002ECB69 /* AccountSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */; };
+		D3204B5A232626DD002ECB69 /* BaseViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B59232626DD002ECB69 /* BaseViewContrller.swift */; };
+		D3204B5C232635FB002ECB69 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B5B232635FB002ECB69 /* UIButton+Extension.swift */; };
+		D3204B7C232639C0002ECB69 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B61232639BF002ECB69 /* libcryptopp.a */; };
+		D3204B7D232639C0002ECB69 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B62232639BF002ECB69 /* libcrypto.a */; };
+		D3204B7E232639C0002ECB69 /* libbz2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B63232639BF002ECB69 /* libbz2.a */; };
+		D3204B7F232639C0002ECB69 /* libbft.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B64232639BF002ECB69 /* libbft.a */; };
+		D3204B80232639C0002ECB69 /* libip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B65232639BF002ECB69 /* libip.a */; };
+		D3204B81232639C0002ECB69 /* liblog4cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B66232639BF002ECB69 /* liblog4cpp.a */; };
+		D3204B82232639C0002ECB69 /* libtransport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B67232639BF002ECB69 /* libtransport.a */; };
+		D3204B83232639C0002ECB69 /* libuuid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B68232639BF002ECB69 /* libuuid.a */; };
+		D3204B84232639C0002ECB69 /* libsync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B69232639BF002ECB69 /* libsync.a */; };
+		D3204B85232639C0002ECB69 /* libdht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6A232639BF002ECB69 /* libdht.a */; };
+		D3204B86232639C0002ECB69 /* libclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6B232639BF002ECB69 /* libclient.a */; };
+		D3204B87232639C0002ECB69 /* libprotobuf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6C232639BF002ECB69 /* libprotobuf.a */; };
+		D3204B88232639C0002ECB69 /* libjson2pb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6D232639BF002ECB69 /* libjson2pb.a */; };
+		D3204B89232639C0002ECB69 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6E232639BF002ECB69 /* libuv.a */; };
+		D3204B8A232639C0002ECB69 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B6F232639BF002ECB69 /* libssl.a */; };
+		D3204B8B232639C0002ECB69 /* libinit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B70232639BF002ECB69 /* libinit.a */; };
+		D3204B8C232639C0002ECB69 /* libnat_traverse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B71232639BF002ECB69 /* libnat_traverse.a */; };
+		D3204B8D232639C0002ECB69 /* libdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B72232639BF002ECB69 /* libdb.a */; };
+		D3204B8E232639C0002ECB69 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B73232639BF002ECB69 /* libleveldb.a */; };
+		D3204B8F232639C0002ECB69 /* libbroadcast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B74232639BF002ECB69 /* libbroadcast.a */; };
+		D3204B90232639C0002ECB69 /* libelection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B75232639BF002ECB69 /* libelection.a */; };
+		D3204B91232639C0002ECB69 /* libnetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B76232639BF002ECB69 /* libnetwork.a */; };
+		D3204B92232639C0002ECB69 /* libblock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B77232639BF002ECB69 /* libblock.a */; };
+		D3204B93232639C0002ECB69 /* libkcp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B78232639BF002ECB69 /* libkcp.a */; };
+		D3204B94232639C0002ECB69 /* libvss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B79232639BF002ECB69 /* libvss.a */; };
+		D3204B95232639C0002ECB69 /* libcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B7A232639BF002ECB69 /* libcommon.a */; };
+		D3204B96232639C0002ECB69 /* libsecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3204B7B232639BF002ECB69 /* libsecurity.a */; };
 		D33FB664231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB665231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */; };
@@ -172,6 +201,36 @@
 		D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetTableViewCell.swift; sourceTree = "<group>"; };
 		D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSetTableViewCell.xib; sourceTree = "<group>"; };
+		D3204B59232626DD002ECB69 /* BaseViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewContrller.swift; sourceTree = "<group>"; };
+		D3204B5B232635FB002ECB69 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D3204B5F232639BF002ECB69 /* vpn_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpn_client.h; sourceTree = "<group>"; };
+		D3204B61232639BF002ECB69 /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
+		D3204B62232639BF002ECB69 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		D3204B63232639BF002ECB69 /* libbz2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbz2.a; sourceTree = "<group>"; };
+		D3204B64232639BF002ECB69 /* libbft.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbft.a; sourceTree = "<group>"; };
+		D3204B65232639BF002ECB69 /* libip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libip.a; sourceTree = "<group>"; };
+		D3204B66232639BF002ECB69 /* liblog4cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblog4cpp.a; sourceTree = "<group>"; };
+		D3204B67232639BF002ECB69 /* libtransport.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtransport.a; sourceTree = "<group>"; };
+		D3204B68232639BF002ECB69 /* libuuid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libuuid.a; sourceTree = "<group>"; };
+		D3204B69232639BF002ECB69 /* libsync.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsync.a; sourceTree = "<group>"; };
+		D3204B6A232639BF002ECB69 /* libdht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdht.a; sourceTree = "<group>"; };
+		D3204B6B232639BF002ECB69 /* libclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libclient.a; sourceTree = "<group>"; };
+		D3204B6C232639BF002ECB69 /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libprotobuf.a; sourceTree = "<group>"; };
+		D3204B6D232639BF002ECB69 /* libjson2pb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjson2pb.a; sourceTree = "<group>"; };
+		D3204B6E232639BF002ECB69 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libuv.a; sourceTree = "<group>"; };
+		D3204B6F232639BF002ECB69 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		D3204B70232639BF002ECB69 /* libinit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libinit.a; sourceTree = "<group>"; };
+		D3204B71232639BF002ECB69 /* libnat_traverse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnat_traverse.a; sourceTree = "<group>"; };
+		D3204B72232639BF002ECB69 /* libdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdb.a; sourceTree = "<group>"; };
+		D3204B73232639BF002ECB69 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
+		D3204B74232639BF002ECB69 /* libbroadcast.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbroadcast.a; sourceTree = "<group>"; };
+		D3204B75232639BF002ECB69 /* libelection.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelection.a; sourceTree = "<group>"; };
+		D3204B76232639BF002ECB69 /* libnetwork.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnetwork.a; sourceTree = "<group>"; };
+		D3204B77232639BF002ECB69 /* libblock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libblock.a; sourceTree = "<group>"; };
+		D3204B78232639BF002ECB69 /* libkcp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkcp.a; sourceTree = "<group>"; };
+		D3204B79232639BF002ECB69 /* libvss.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libvss.a; sourceTree = "<group>"; };
+		D3204B7A232639BF002ECB69 /* libcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcommon.a; sourceTree = "<group>"; };
+		D3204B7B232639BF002ECB69 /* libsecurity.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecurity.a; sourceTree = "<group>"; };
 		D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D33FB669231F8AD9004ECA2A /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
@@ -192,20 +251,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3204B87232639C0002ECB69 /* libprotobuf.a in Frameworks */,
+				D3204B8E232639C0002ECB69 /* libleveldb.a in Frameworks */,
 				D33FB664231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */,
 				D33FB676231F8B07004ECA2A /* NEKit.framework in Frameworks */,
+				D3204B91232639C0002ECB69 /* libnetwork.a in Frameworks */,
+				D3204B7D232639C0002ECB69 /* libcrypto.a in Frameworks */,
+				D3204B89232639C0002ECB69 /* libuv.a in Frameworks */,
 				D33FB679231F8B0F004ECA2A /* Resolver.framework in Frameworks */,
 				18E9149E22672644005E6027 /* NetworkExtension.framework in Frameworks */,
+				D3204B90232639C0002ECB69 /* libelection.a in Frameworks */,
+				D3204B95232639C0002ECB69 /* libcommon.a in Frameworks */,
+				D3204B7C232639C0002ECB69 /* libcryptopp.a in Frameworks */,
 				D33FB670231F8AF9004ECA2A /* lwip.framework in Frameworks */,
+				D3204B8C232639C0002ECB69 /* libnat_traverse.a in Frameworks */,
+				D3204B88232639C0002ECB69 /* libjson2pb.a in Frameworks */,
+				D3204B86232639C0002ECB69 /* libclient.a in Frameworks */,
+				D3204B82232639C0002ECB69 /* libtransport.a in Frameworks */,
+				D3204B81232639C0002ECB69 /* liblog4cpp.a in Frameworks */,
+				D3204B8A232639C0002ECB69 /* libssl.a in Frameworks */,
+				D3204B80232639C0002ECB69 /* libip.a in Frameworks */,
+				D3204B94232639C0002ECB69 /* libvss.a in Frameworks */,
 				D33FB67C231F8B15004ECA2A /* Sodium.framework in Frameworks */,
+				D3204B92232639C0002ECB69 /* libblock.a in Frameworks */,
 				D33FB67F231F8B1B004ECA2A /* tun2socks.framework in Frameworks */,
+				D3204B83232639C0002ECB69 /* libuuid.a in Frameworks */,
+				D3204B8D232639C0002ECB69 /* libdb.a in Frameworks */,
+				D3204B96232639C0002ECB69 /* libsecurity.a in Frameworks */,
 				D33FB682231F8B23004ECA2A /* Yaml.framework in Frameworks */,
 				D33FB66A231F8AD9004ECA2A /* CocoaLumberjackSwift.framework in Frameworks */,
+				D3204B93232639C0002ECB69 /* libkcp.a in Frameworks */,
+				D3204B8F232639C0002ECB69 /* libbroadcast.a in Frameworks */,
 				D33FB66D231F8AE6004ECA2A /* CommonCrypto.framework in Frameworks */,
 				D33FB685231F8F03004ECA2A /* Eureka.framework in Frameworks */,
 				D33FB673231F8AFF004ECA2A /* MMDB.framework in Frameworks */,
+				D3204B7F232639C0002ECB69 /* libbft.a in Frameworks */,
 				D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */,
 				DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */,
+				D3204B7E232639C0002ECB69 /* libbz2.a in Frameworks */,
+				D3204B85232639C0002ECB69 /* libdht.a in Frameworks */,
+				D3204B84232639C0002ECB69 /* libsync.a in Frameworks */,
+				D3204B8B232639C0002ECB69 /* libinit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +333,7 @@
 		18E914102266C7B4005E6027 = {
 			isa = PBXGroup;
 			children = (
+				D3204B5D232639BF002ECB69 /* vpn */,
 				18E9141B2266C7B4005E6027 /* Tenon */,
 				18E914412266C9B3005E6027 /* PacketTunnel */,
 				18F3C6432293D7F800D79C4A /* freeWidget */,
@@ -289,6 +376,8 @@
 				D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */,
 				D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */,
 				D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */,
+				D3204B59232626DD002ECB69 /* BaseViewContrller.swift */,
+				D3204B5B232635FB002ECB69 /* UIButton+Extension.swift */,
 			);
 			path = Tenon;
 			sourceTree = "<group>";
@@ -351,6 +440,57 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3204B5D232639BF002ECB69 /* vpn */ = {
+			isa = PBXGroup;
+			children = (
+				D3204B5E232639BF002ECB69 /* include */,
+				D3204B60232639BF002ECB69 /* lib */,
+			);
+			path = vpn;
+			sourceTree = "<group>";
+		};
+		D3204B5E232639BF002ECB69 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D3204B5F232639BF002ECB69 /* vpn_client.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		D3204B60232639BF002ECB69 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D3204B61232639BF002ECB69 /* libcryptopp.a */,
+				D3204B62232639BF002ECB69 /* libcrypto.a */,
+				D3204B63232639BF002ECB69 /* libbz2.a */,
+				D3204B64232639BF002ECB69 /* libbft.a */,
+				D3204B65232639BF002ECB69 /* libip.a */,
+				D3204B66232639BF002ECB69 /* liblog4cpp.a */,
+				D3204B67232639BF002ECB69 /* libtransport.a */,
+				D3204B68232639BF002ECB69 /* libuuid.a */,
+				D3204B69232639BF002ECB69 /* libsync.a */,
+				D3204B6A232639BF002ECB69 /* libdht.a */,
+				D3204B6B232639BF002ECB69 /* libclient.a */,
+				D3204B6C232639BF002ECB69 /* libprotobuf.a */,
+				D3204B6D232639BF002ECB69 /* libjson2pb.a */,
+				D3204B6E232639BF002ECB69 /* libuv.a */,
+				D3204B6F232639BF002ECB69 /* libssl.a */,
+				D3204B70232639BF002ECB69 /* libinit.a */,
+				D3204B71232639BF002ECB69 /* libnat_traverse.a */,
+				D3204B72232639BF002ECB69 /* libdb.a */,
+				D3204B73232639BF002ECB69 /* libleveldb.a */,
+				D3204B74232639BF002ECB69 /* libbroadcast.a */,
+				D3204B75232639BF002ECB69 /* libelection.a */,
+				D3204B76232639BF002ECB69 /* libnetwork.a */,
+				D3204B77232639BF002ECB69 /* libblock.a */,
+				D3204B78232639BF002ECB69 /* libkcp.a */,
+				D3204B79232639BF002ECB69 /* libvss.a */,
+				D3204B7A232639BF002ECB69 /* libcommon.a */,
+				D3204B7B232639BF002ECB69 /* libsecurity.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,6 +504,7 @@
 				18E914172266C7B4005E6027 /* Resources */,
 				18E9144C2266C9B3005E6027 /* Embed App Extensions */,
 				18E9148F2267211F005E6027 /* CopyFiles */,
+				033590241A55CFD5251759BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -519,6 +660,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		033590241A55CFD5251759BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TenonVPN/Pods-TenonVPN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TenonVPN/Pods-TenonVPN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TenonVPN/Pods-TenonVPN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		36C190365D6337FAD64BD7C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,7 +751,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3204B5523261E5D002ECB69 /* AccountSetTableViewCell.swift in Sources */,
+				D3204B5A232626DD002ECB69 /* BaseViewContrller.swift in Sources */,
 				D316BB74232210C5008C8FD3 /* HomePageViewController.swift in Sources */,
+				D3204B5C232635FB002ECB69 /* UIButton+Extension.swift in Sources */,
 				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
 				D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */,
@@ -799,6 +959,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vpn/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -825,6 +989,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vpn/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
 				PRODUCT_NAME = "$(TARGET_NAME)";

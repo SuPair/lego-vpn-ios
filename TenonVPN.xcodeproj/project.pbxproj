@@ -34,6 +34,9 @@
 		D316BC2523224D97008C8FD3 /* AcountSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */; };
 		D316BC2823224F24008C8FD3 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */; };
 		D316BC2923224F24008C8FD3 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */; };
+		D3204B522325EA7A002ECB69 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */; };
+		D3204B5523261E5D002ECB69 /* AccountSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */; };
+		D3204B5623261E5D002ECB69 /* AccountSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */; };
 		D33FB664231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB665231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */; };
 		D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */; };
@@ -166,6 +169,9 @@
 		D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcountSetViewController.xib; sourceTree = "<group>"; };
 		D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetTableViewCell.swift; sourceTree = "<group>"; };
+		D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSetTableViewCell.xib; sourceTree = "<group>"; };
 		D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D33FB669231F8AD9004ECA2A /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
@@ -280,6 +286,9 @@
 				D316BC2323224D97008C8FD3 /* AcountSetViewController.xib */,
 				D316BC2623224F24008C8FD3 /* CountryTableViewCell.swift */,
 				D316BC2723224F24008C8FD3 /* CountryTableViewCell.xib */,
+				D3204B512325EA7A002ECB69 /* UITableView+Extension.swift */,
+				D3204B5323261E5D002ECB69 /* AccountSetTableViewCell.swift */,
+				D3204B5423261E5D002ECB69 /* AccountSetTableViewCell.xib */,
 			);
 			path = Tenon;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D316BC2923224F24008C8FD3 /* CountryTableViewCell.xib in Resources */,
+				D3204B5623261E5D002ECB69 /* AccountSetTableViewCell.xib in Resources */,
 				D316BC2123224D86008C8FD3 /* ChoseCountryViewController.xib in Resources */,
 				18E914272266C7B5005E6027 /* LaunchScreen.storyboard in Resources */,
 				D316BB75232210C5008C8FD3 /* HomePageViewController.xib in Resources */,
@@ -582,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3204B5523261E5D002ECB69 /* AccountSetTableViewCell.swift in Sources */,
 				D316BB74232210C5008C8FD3 /* HomePageViewController.swift in Sources */,
 				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
@@ -589,6 +600,7 @@
 				18E9141D2266C7B4005E6027 /* AppDelegate.swift in Sources */,
 				D316BC2823224F24008C8FD3 /* CountryTableViewCell.swift in Sources */,
 				18E9147422671B28005E6027 /* VpnManager.swift in Sources */,
+				D3204B522325EA7A002ECB69 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

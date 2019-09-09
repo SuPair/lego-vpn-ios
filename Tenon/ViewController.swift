@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnAccount: UIButton!
     @IBOutlet weak var btnConnect: UIButton!
     @IBOutlet weak var btnChoseCountry: UIButton!
+    @IBOutlet weak var imgCountryIcon: UIImageView!
+    @IBOutlet weak var lbNodes: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +32,20 @@ class ViewController: UIViewController {
     }
     @IBAction func clickChoseCountry(_ sender: Any) {
         let choseCountry = ChoseCountryViewController()
-//        choseCountry.callBackBlock = (
-//            NSLog("123123")
-//        )
+        choseCountry.title = "Chose Country"
+        choseCountry.callBackBlk = {(str,icon,nodes) in
+            NSLog(str + "+" + icon)
+            self.btnChoseCountry.setTitle(str, for: UIControl.State.normal)
+            self.imgCountryIcon.image = UIImage(named:icon)
+            self.lbNodes.text = nodes+" nodes"
+        }
         self.navigationController?.pushViewController(choseCountry, animated: true)
-        
     }
     
     @IBAction func clickAccountSetting(_ sender: Any) {
         NSLog("account setting")
         let acountSet = AcountSetViewController()
+        acountSet.title = "Account Setting"
         self.navigationController?.pushViewController(acountSet, animated: true)
         
     }

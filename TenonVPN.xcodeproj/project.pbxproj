@@ -16,15 +16,12 @@
 		18E914482266C9B3005E6027 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18E914402266C9B3005E6027 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18E9147422671B28005E6027 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9147322671B28005E6027 /* VpnManager.swift */; };
 		18E9149C2267220B005E6027 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9149B2267220B005E6027 /* NEKitRule.conf */; };
-		18E9149E22672644005E6027 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9149D22672644005E6027 /* NetworkExtension.framework */; };
-		18E9149F22672657005E6027 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9149D22672644005E6027 /* NetworkExtension.framework */; };
 		18F3C6422293D7F800D79C4A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */; };
 		18F3C6452293D7F800D79C4A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3C6442293D7F800D79C4A /* TodayViewController.swift */; };
 		18F3C6482293D7F800D79C4A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F3C6462293D7F800D79C4A /* MainInterface.storyboard */; };
 		18F3C64C2293D7F800D79C4A /* freeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18F3C6412293D7F800D79C4A /* freeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18F3C6512293DBF200D79C4A /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9147322671B28005E6027 /* VpnManager.swift */; };
 		18F3C6522293E40400D79C4A /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9149B2267220B005E6027 /* NEKitRule.conf */; };
-		18F3C6552293EEBF00D79C4A /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E9149D22672644005E6027 /* NetworkExtension.framework */; };
 		5DA1BE6BD0C526BF119CCCE7 /* Pods_PacketTunnel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74E606D8AE4BE562B38CEF4 /* Pods_PacketTunnel.framework */; };
 		D30B566D23277310003E87EE /* AcountSetTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B566B23277310003E87EE /* AcountSetTestViewController.swift */; };
 		D30B566E23277310003E87EE /* AcountSetTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30B566C23277310003E87EE /* AcountSetTestViewController.xib */; };
@@ -82,6 +79,9 @@
 		D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34378F323289126000F1F69 /* FWBottomPopView.swift */; };
 		D34378F72328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34378F52328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift */; };
 		D34378F82328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */; };
+		D34378FC2328F226000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
+		D34378FD2328F22D000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
+		D34378FF2328F234000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
 		DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */; };
 		FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */; };
 /* End PBXBuildFile section */
@@ -154,7 +154,6 @@
 		18E9144F22671181005E6027 /* Tenon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tenon.entitlements; sourceTree = "<group>"; };
 		18E9147322671B28005E6027 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		18E9149B2267220B005E6027 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
-		18E9149D22672644005E6027 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		18F3C6412293D7F800D79C4A /* freeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = freeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3C6442293D7F800D79C4A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +199,8 @@
 		D34378F323289126000F1F69 /* FWBottomPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWBottomPopView.swift; sourceTree = "<group>"; };
 		D34378F52328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSetHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		D34378FB2328F226000F1F69 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		D34378FE2328F234000F1F69 /* TenonVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenonVPN.entitlements; sourceTree = "<group>"; };
 		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,7 +212,6 @@
 				D33FB664231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */,
 				D33FB676231F8B07004ECA2A /* NEKit.framework in Frameworks */,
 				D33FB679231F8B0F004ECA2A /* Resolver.framework in Frameworks */,
-				18E9149E22672644005E6027 /* NetworkExtension.framework in Frameworks */,
 				D33FB670231F8AF9004ECA2A /* lwip.framework in Frameworks */,
 				D33FB67C231F8B15004ECA2A /* Sodium.framework in Frameworks */,
 				D33FB67F231F8B1B004ECA2A /* tun2socks.framework in Frameworks */,
@@ -222,6 +222,7 @@
 				D33FB673231F8AFF004ECA2A /* MMDB.framework in Frameworks */,
 				D33FB667231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */,
 				DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */,
+				D34378FF2328F234000F1F69 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +233,6 @@
 				D33FB665231F8AB2004ECA2A /* CocoaAsyncSocket.framework in Frameworks */,
 				D33FB677231F8B07004ECA2A /* NEKit.framework in Frameworks */,
 				D33FB67A231F8B0F004ECA2A /* Resolver.framework in Frameworks */,
-				18E9149F22672657005E6027 /* NetworkExtension.framework in Frameworks */,
 				D33FB671231F8AF9004ECA2A /* lwip.framework in Frameworks */,
 				D33FB67D231F8B15004ECA2A /* Sodium.framework in Frameworks */,
 				D33FB680231F8B1B004ECA2A /* tun2socks.framework in Frameworks */,
@@ -243,6 +243,7 @@
 				D33FB674231F8AFF004ECA2A /* MMDB.framework in Frameworks */,
 				D33FB668231F8AC4004ECA2A /* CocoaLumberjack.framework in Frameworks */,
 				5DA1BE6BD0C526BF119CCCE7 /* Pods_PacketTunnel.framework in Frameworks */,
+				D34378FC2328F226000F1F69 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +252,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33FB687231F8F03004ECA2A /* Eureka.framework in Frameworks */,
+				D34378FD2328F22D000F1F69 /* NetworkExtension.framework in Frameworks */,
 				18F3C6422293D7F800D79C4A /* NotificationCenter.framework in Frameworks */,
-				18F3C6552293EEBF00D79C4A /* NetworkExtension.framework in Frameworks */,
 				FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +264,7 @@
 		18E914102266C7B4005E6027 = {
 			isa = PBXGroup;
 			children = (
+				D34378FE2328F234000F1F69 /* TenonVPN.entitlements */,
 				18E9141B2266C7B4005E6027 /* Tenon */,
 				18E914412266C9B3005E6027 /* PacketTunnel */,
 				18F3C6432293D7F800D79C4A /* freeWidget */,
@@ -351,8 +353,8 @@
 		AE2E93114404A35E87606173 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D34378FB2328F226000F1F69 /* NetworkExtension.framework */,
 				D33FB684231F8F03004ECA2A /* Eureka.framework */,
-				18E9149D22672644005E6027 /* NetworkExtension.framework */,
 				D33FB663231F8AB2004ECA2A /* CocoaAsyncSocket.framework */,
 				D33FB666231F8AC4004ECA2A /* CocoaLumberjack.framework */,
 				D33FB669231F8AD9004ECA2A /* CocoaLumberjackSwift.framework */,
@@ -844,9 +846,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TenonVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -862,7 +864,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vpn/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -876,9 +878,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TenonVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -894,7 +896,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vpn/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -909,7 +911,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -921,7 +923,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -936,7 +938,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -948,7 +950,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -963,7 +965,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -976,7 +978,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.freeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.freeWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -992,7 +994,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1005,7 +1007,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.freeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.freeWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

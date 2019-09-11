@@ -45,6 +45,12 @@ class ViewController: BaseViewController {
 //        let test = VpnClient()
 //        test.printSocket("123123123")
 //        VpnClient.GetSocket()
+        let url = URL(string:"https://www.baidu.com");
+        URLSession(configuration: .default).dataTask(with: url!, completionHandler: {
+            (data, rsp, error) in
+            //do some thing
+            print("visit network ok.");
+        }).resume()
     }
     @IBAction func clickConnect(_ sender: Any) {
 //        if self.timer == nil{

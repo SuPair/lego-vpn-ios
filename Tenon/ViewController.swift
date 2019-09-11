@@ -23,7 +23,7 @@ class ViewController: BaseViewController {
     var popMenu:FWPopMenu!
     var isClick:Bool = false
     var timer:Timer!
-    
+    var popBottomView:FWBottomPopView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +47,13 @@ class ViewController: BaseViewController {
 //        VpnClient.GetSocket()
     }
     @IBAction func clickConnect(_ sender: Any) {
-        if self.timer == nil{
-            self.playAnimotion()
-        }else{
-            self.stopAnimotion()
-        }
+//        if self.timer == nil{
+//            self.playAnimotion()
+//        }else{
+//            self.stopAnimotion()
+//        }
+        let controller:HomePageViewController  = HomePageViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     @IBAction func clickChoseCountry(_ sender: Any) {
         if self.isClick == true {
@@ -87,10 +89,29 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func clickAccountSetting(_ sender: Any) {
-        NSLog("account setting")
-        let acountSet = AcountSetViewController()
-        acountSet.title = "Account Setting"
-        self.navigationController?.pushViewController(acountSet, animated: true)
+        
+//        self.popBottomView = FWBottomPopView.init(frame:CGRect(x: self.btnChoseCountry.left, y: self.btnChoseCountry.bottom, width: self.btnChoseCountry.width, height: SCREEN_HEIGHT/2))
+//        self.popBottomView.loadCell("AccountSetTableViewCell", 3)
+//        self.popBottomView.callBackBlk = {(cell,indexPath) in
+//            let tempCell:AccountSetTableViewCell = cell as! AccountSetTableViewCell
+//            return tempCell
+//        }
+//        self.popMenu.clickBlck = {(idx) in
+//            if idx != -1{
+//                self.btnChoseCountry.setTitle(countryCode[idx], for: UIControl.State.normal)
+//                self.imgCountryIcon.image = UIImage(named:iCon[idx])
+//                self.lbNodes.text = "155 nodes"
+//            }
+//
+//            self.popMenu.removeFromSuperview()
+//            self.isClick = !self.isClick
+//        }
+//        self.view.addSubview(self.popMenu)
+        
+//        NSLog("account setting")
+//        let acountSet = AcountSetViewController()
+//        acountSet.title = "Account Setting"
+//        self.navigationController?.pushViewController(acountSet, animated: true)
         
     }
     
@@ -124,27 +145,5 @@ class ViewController: BaseViewController {
                 self.isHub = false
             }
         }
-        //        if (self.imgHand.alpha == 0.99f) {
-        //            // 动画由小变大
-        //            self.imgHand.transform = CGAffineTransformMake(0.8, 0, 0, 0.8, offsetX, offsetY);
-        //
-        //            [UIView animateWithDuration:0.8f animations:^{
-        //                self.imgHand.alpha = 1.0f;
-        //                self.imgHand.transform = CGAffineTransformIdentity;
-        //
-        //                } completion:^(BOOL finished) {
-        //
-        //                }];
-        //        } else {
-        //            // 动画由大变小
-        //            self.imgHand.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
-        //            [UIView animateWithDuration:0.8f animations:^{
-        //                self.imgHand.transform = CGAffineTransformMake(0.8, 0, 0, 0.8, offsetX, offsetY);
-        //                self.imgHand.alpha = 0.99f;
-        //                } completion:^(BOOL finished) {
-        //                self.imgHand.transform = CGAffineTransformIdentity;
-        //
-        //                }];
-        //        }
     }
 }

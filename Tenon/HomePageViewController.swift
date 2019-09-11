@@ -23,10 +23,15 @@ class HomePageViewController: UIViewController {
 
 
     @IBAction func clickConnect(_ sender: Any) {
-        VpnManager.shared.ip_address = self.tfIpAddress.text ?? "";
-        VpnManager.shared.port = Int(self.tfPort.text ?? "0")!
-        VpnManager.shared.password = self.tfPassword.text ?? ""
-        VpnManager.shared.algorithm = self.tfCrypto.text ?? "AES256CFB"
+//        VpnManager.shared.ip_address = "162.245.239.74"//self.tfIpAddress.text ?? ""
+//        VpnManager.shared.port = 23459//Int(self.tfPort.text ?? "0")!
+//        VpnManager.shared.password = "dongtaiwang.com"//self.tfPassword.text ?? ""
+//        VpnManager.shared.algorithm = "AES256CFB"//self.tfCrypto.text ?? "AES256CFB"
+        VpnManager.shared.ip_address = "167.71.113.28"
+        VpnManager.shared.port = 10190
+        VpnManager.shared.password = "password"
+        VpnManager.shared.algorithm = "AES256CFB";
+        
         if VpnManager.shared.vpnStatus == .on{
             VpnManager.shared.disconnect()
         }

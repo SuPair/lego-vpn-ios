@@ -79,6 +79,7 @@
 		D33FB693231F94AF004ECA2A /* Sodium.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67B231F8B15004ECA2A /* Sodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB694231F94AF004ECA2A /* tun2socks.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67E231F8B1B004ECA2A /* tun2socks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB695231F94AF004ECA2A /* Yaml.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB681231F8B23004ECA2A /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34378F323289126000F1F69 /* FWBottomPopView.swift */; };
 		DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */; };
 		FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */; };
 /* End PBXBuildFile section */
@@ -194,6 +195,7 @@
 		D33FB67E231F8B1B004ECA2A /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
 		D33FB681231F8B23004ECA2A /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		D33FB684231F8F03004ECA2A /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		D34378F323289126000F1F69 /* FWBottomPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWBottomPopView.swift; sourceTree = "<group>"; };
 		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -370,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B567223277953003E87EE /* FWPopMenu.swift */,
+				D34378F323289126000F1F69 /* FWBottomPopView.swift */,
 			);
 			path = FWPopMenu;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				D3204B5C232635FB002ECB69 /* UIButton+Extension.swift in Sources */,
 				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				D30B566D23277310003E87EE /* AcountSetTestViewController.swift in Sources */,
+				D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
 				D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */,
 				18E9141D2266C7B4005E6027 /* AppDelegate.swift in Sources */,
@@ -834,7 +838,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -850,7 +854,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vpn/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -866,7 +870,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tenon/Tenon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -882,7 +886,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vpn/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -897,7 +901,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -909,7 +913,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -924,7 +928,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -936,7 +940,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.PacketTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -951,7 +955,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -964,7 +968,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.freeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.freeWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -980,7 +984,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = freeWidget/freeWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BT6VFF8ZHB;
+				DEVELOPMENT_TEAM = MF5R7KP39Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -993,7 +997,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jitong.ALD.freeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fmkj.hammer-.freeWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

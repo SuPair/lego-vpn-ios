@@ -89,30 +89,44 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func clickAccountSetting(_ sender: Any) {
-        
-//        self.popBottomView = FWBottomPopView.init(frame:CGRect(x: self.btnChoseCountry.left, y: self.btnChoseCountry.bottom, width: self.btnChoseCountry.width, height: SCREEN_HEIGHT/2))
-//        self.popBottomView.loadCell("AccountSetTableViewCell", 3)
-//        self.popBottomView.callBackBlk = {(cell,indexPath) in
-//            let tempCell:AccountSetTableViewCell = cell as! AccountSetTableViewCell
-//            return tempCell
-//        }
-//        self.popMenu.clickBlck = {(idx) in
-//            if idx != -1{
-//                self.btnChoseCountry.setTitle(countryCode[idx], for: UIControl.State.normal)
-//                self.imgCountryIcon.image = UIImage(named:iCon[idx])
-//                self.lbNodes.text = "155 nodes"
-//            }
-//
-//            self.popMenu.removeFromSuperview()
-//            self.isClick = !self.isClick
-//        }
-//        self.view.addSubview(self.popMenu)
-        
-//        NSLog("account setting")
-//        let acountSet = AcountSetViewController()
-//        acountSet.title = "Account Setting"
-//        self.navigationController?.pushViewController(acountSet, animated: true)
-        
+        if self.btnAccount.isUserInteractionEnabled == true{
+            self.popBottomView = FWBottomPopView.init(frame:CGRect(x: 0, y: SCREEN_HEIGHT - (SCREEN_HEIGHT/3*2), width: SCREEN_WIDTH, height: SCREEN_HEIGHT/3*2))
+            self.popBottomView.loadCell("AccountSetTableViewCell","AccountSetHeaderTableViewCell", 3)
+            self.popBottomView.callBackBlk = {(cell,indexPath) in
+                if indexPath.section == 0 {
+                    let tempCell:AccountSetHeaderTableViewCell = cell as! AccountSetHeaderTableViewCell
+                    tempCell.tfPrivateKeyValue.text = "e16b61208d000580805cfd62d6247563208b50510ee241d18f7ef36d280df213"
+                    tempCell.lbAccountAddress.text = "1E79BfxiDFMXRGSsX2sx2v1vEoc5H4QtE6"
+                    return tempCell
+                }
+                else{
+                    let tempCell:AccountSetTableViewCell = cell as! AccountSetTableViewCell
+                    tempCell.layer.masksToBounds = true
+                    tempCell.layer.cornerRadius = 8
+                    tempCell.lbDateTime.text = "20190905 11:01:20"
+                    tempCell.lbType.text = "TRAN"
+                    tempCell.lbAccount.text = "6DCASDLKJQWIOEDANSLDJLKJQWLDNALSJD37"
+                    tempCell.lbAmount.text = "4"
+                    return tempCell
+                }
+            }
+            
+            self.popBottomView.clickBlck = {(idx) in
+                self.btnAccount.isUserInteractionEnabled = !self.btnAccount.isUserInteractionEnabled
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.popBottomView.top = SCREEN_HEIGHT
+                }, completion: { (Bool) in
+                    self.popBottomView.removeFromSuperview()
+                })
+            }
+            self.popBottomView.top = self.popBottomView.height
+            self.view.addSubview(self.popBottomView)
+            UIView.animate(withDuration: 0.4, animations: {
+                self.popBottomView.top = 0
+            }, completion: { (Bool) in
+                self.btnAccount.isUserInteractionEnabled = !self.btnAccount.isUserInteractionEnabled
+            })
+        }
     }
     
     func stopAnimotion() {

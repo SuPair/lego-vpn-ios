@@ -12,8 +12,10 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
     var callBackBlk : callBackCellForRow?
     var clickBlck: clickCellRow?
     var cellName:String!
+    var cellHeaderName:String!
     var tableView:UITableView!
     var rowCount:Int!
+    var topView:UIView!
     /*
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
@@ -23,16 +25,28 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
      */
     override init(frame:CGRect){
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        self.topView = UIView(frame: CGRect(x: 0, y: -SCREEN_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT*2-frame.height))
+        self.topView.backgroundColor = UIColor.black
+        self.topView.alpha = 0
         self.TapGestureRecognizer()
+        
         self.backgroundColor = UIColor.clear
         self.tableView = UITableView(frame: frame)
         self.tableView.delegate = self
         //        self.tableView.showsVerticalScrollIndicator = false
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.tableView.allowsSelection = false
         self.tableView.dataSource = self
+        self.addSubview(self.topView)
         self.addSubview(self.tableView)
         self.cellName = ""
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.topView.alpha = 0.5
+        }) { (Bool) in
+            
+        }
     }
     func TapGestureRecognizer() -> Void {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer.init()
@@ -40,10 +54,15 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
         tap.numberOfTouchesRequired = 1 //手指个数
         tap.delegate = self
         tap.addTarget(self, action: #selector(tapAction(action:)))
-        self.addGestureRecognizer(tap)
+        self.topView.addGestureRecognizer(tap)
     }
     /*轻点手势的方法*/
     @objc func tapAction(action:UITapGestureRecognizer) -> Void {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.topView.alpha = 0
+        }) { (Bool) in
+            
+        }
         self.clickBlck!(-1)
     }
     
@@ -55,10 +74,12 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
         }
     }
     
-    public func loadCell(_ cellName:String ,_ rowCount:Int){
+    public func loadCell(_ cellName:String ,_ cellHeaderName:String ,_ rowCount:Int){
         self.cellName = cellName
+        self.cellHeaderName = cellHeaderName
         self.rowCount = rowCount
         self.tableView.loadCell(cellName)
+        self.tableView.loadCell(cellHeaderName)
         self.tableView.reloadData()
     }
     
@@ -67,17 +88,26 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rowCount
+        if section == 0 {
+            return 1
+        }else{
+            return self.rowCount
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.reUseCell(self.cellName)
-        return self.callBackBlk!(cell,indexPath) as! UITableViewCell
+        if indexPath.section == 0 {
+            let cell:UITableViewCell = tableView.reUseCell(self.cellHeaderName)
+            return self.callBackBlk!(cell,indexPath) as! UITableViewCell
+        }else{
+            let cell:UITableViewCell = tableView.reUseCell(self.cellName)
+            return self.callBackBlk!(cell,indexPath) as! UITableViewCell
+        }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.clickBlck!(indexPath.row)
-    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.clickBlck!(indexPath.row)
+//    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

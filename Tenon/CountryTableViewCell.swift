@@ -16,8 +16,8 @@ class CountryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.lbNodeCount.textColor = APP_COLOR
-        self.lbCountryName.textColor = APP_COLOR
+//        self.lbNodeCount.textColor = APP_COLOR
+//        self.lbCountryName.textColor = APP_COLOR
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

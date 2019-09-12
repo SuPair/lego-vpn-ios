@@ -13,6 +13,8 @@ import Eureka
 //import TenonVPNConnection
 
 class ViewController: BaseViewController {
+    @IBOutlet weak var imgConnect: UIImageView!
+    @IBOutlet weak var lbConnect: UILabel!
     @IBOutlet weak var vwBackHub: CircleProgress!
     @IBOutlet weak var btnAccount: UIButton!
     @IBOutlet weak var btnConnect: UIButton!
@@ -23,6 +25,7 @@ class ViewController: BaseViewController {
     var popMenu:FWPopMenu!
     var isClick:Bool = false
     var timer:Timer!
+    var isNetChange:Bool = false
     
     var popBottomView:FWBottomPopView!
     
@@ -54,17 +57,41 @@ class ViewController: BaseViewController {
         print("local country:" + res.local_country)
         print("private key:" + res.prikey)
         print("account id:" + res.account_id)
+        NotificationCenter.default.addObserver(self, selector: #selector(onVPNStatusChanged), name: NSNotification.Name(rawValue: kProxyServiceVPNStatusNotification), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func onVPNStatusChanged(){
+        isNetChange = true
+        if VpnManager.shared.vpnStatus == .on{
+            self.btnConnect.backgroundColor = APP_COLOR
+            self.vwBackHub.setLayerColor(color: UIColor(rgb: 0xA1FDEE))
+            imgConnect.image = UIImage(named: "connected")
+            lbConnect.text = "Connect"
+        }else{
+            self.btnConnect.backgroundColor = UIColor(rgb: 0xDAD8D9)
+            self.vwBackHub.setLayerColor(color: UIColor(rgb: 0xE4E2E3))
+            imgConnect.image = UIImage(named: "connect")
+            lbConnect.text = "Connected"
+        }
     }
     @IBAction func clickConnect(_ sender: Any) {
-        if self.timer == nil {
+        if VpnManager.shared.vpnStatus == .off {
+            self.vwBackHub.proEndgress = 0.0
+            self.vwBackHub.proStartgress = 0.0
             self.playAnimotion()
+            VpnManager.shared.ip_address = "167.71.113.28"
+            VpnManager.shared.port = 10190
+            VpnManager.shared.password = "password"
+            VpnManager.shared.algorithm = "AES256CFB";
+            VpnManager.shared.connect()
         }else{
-            self.stopAnimotion()
+            self.vwBackHub.proEndgress = 0.0
+            self.vwBackHub.proStartgress = 0.0
+            VpnManager.shared.disconnect()
+            self.playAnimotion()
         }
-        
-        
-//        let controller:HomePageViewController  = HomePageViewController()
-//        self.navigationController?.pushViewController(controller, animated: true)
     }
     @IBAction func clickChoseCountry(_ sender: Any) {
         if self.isClick == true {
@@ -141,8 +168,11 @@ class ViewController: BaseViewController {
     }
     
     func stopAnimotion() {
-        self.timer.invalidate()
-        self.timer = nil
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
     }
     @objc func playAnimotion() {
         if self.timer == nil {
@@ -160,8 +190,13 @@ class ViewController: BaseViewController {
         }else{
             self.vwBackHub.proStartgress += 0.1
             if self.vwBackHub.proStartgress > 1.0{
-                self.vwBackHub.proEndgress = 0.0
-                self.vwBackHub.proStartgress = 0.0
+                if isNetChange == true{
+                    stopAnimotion()
+                    isNetChange = false
+                }else{
+                    self.vwBackHub.proEndgress = 0.0
+                    self.vwBackHub.proStartgress = 0.0
+                }
             }
         }
     }

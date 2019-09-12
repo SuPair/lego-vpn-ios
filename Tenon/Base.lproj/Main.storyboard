@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="width" secondItem="WMm-5y-Hlt" secondAttribute="height" multiplier="1:1" id="5Bz-0D-Ptr"/>
                                     <constraint firstAttribute="width" constant="200" id="ZYV-KS-rrh"/>
                                 </constraints>
-                                <state key="normal" title="Connect">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -119,20 +119,36 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_left_icon" translatesAutoresizingMaskIntoConstraints="NO" id="YHl-J3-WAI">
                                 <rect key="frame" x="325" y="162" width="12" height="12"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-E8-nzj">
+                                <rect key="frame" x="155" y="357.5" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connect" translatesAutoresizingMaskIntoConstraints="NO" id="mLz-mT-Jxf">
+                                <rect key="frame" x="157.5" y="289.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="CzP-HU-meh"/>
+                                    <constraint firstAttribute="height" constant="60" id="Q3k-q5-Xue"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hb3-hP-Gvn" firstAttribute="bottom" secondItem="wu3-k5-dkf" secondAttribute="bottom" constant="-8" id="04v-lf-QkP"/>
                             <constraint firstItem="WMm-5y-Hlt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1In-S0-x4I"/>
+                            <constraint firstItem="mLz-mT-Jxf" firstAttribute="centerX" secondItem="IOC-E8-nzj" secondAttribute="centerX" id="3GA-Z2-cL9"/>
                             <constraint firstItem="uaT-WF-3iG" firstAttribute="centerX" secondItem="smd-Wo-Ltm" secondAttribute="centerX" id="64o-u9-Scc"/>
                             <constraint firstItem="YHl-J3-WAI" firstAttribute="centerY" secondItem="wu3-k5-dkf" secondAttribute="centerY" id="6P7-Eb-da3"/>
                             <constraint firstItem="smd-Wo-Ltm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7hE-hj-OEV"/>
                             <constraint firstItem="C0t-OL-mqm" firstAttribute="leading" secondItem="DR5-wC-YXE" secondAttribute="trailing" constant="8" id="8Pb-D9-OtD"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="951-TG-0Ip"/>
                             <constraint firstItem="DR5-wC-YXE" firstAttribute="height" secondItem="smd-Wo-Ltm" secondAttribute="height" id="BQq-LX-8YH"/>
+                            <constraint firstItem="IOC-E8-nzj" firstAttribute="top" secondItem="mLz-mT-Jxf" secondAttribute="bottom" constant="8" id="Ezp-ab-tgP"/>
                             <constraint firstItem="DR5-wC-YXE" firstAttribute="centerX" secondItem="G86-7R-Ma8" secondAttribute="centerX" constant="-25" id="GU0-VX-f4b"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="top" secondItem="DR5-wC-YXE" secondAttribute="bottom" constant="8" id="HAg-z0-Hqo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4OK-ia-4Gi" secondAttribute="trailing" constant="20" id="HfA-8i-CD1"/>
+                            <constraint firstItem="IOC-E8-nzj" firstAttribute="centerY" secondItem="WMm-5y-Hlt" secondAttribute="centerY" constant="30" id="JTp-qY-AwP"/>
                             <constraint firstItem="C0t-OL-mqm" firstAttribute="centerY" secondItem="DR5-wC-YXE" secondAttribute="centerY" id="Jwd-ba-TQz"/>
                             <constraint firstItem="WMm-5y-Hlt" firstAttribute="top" secondItem="wu3-k5-dkf" secondAttribute="bottom" constant="40" id="L3y-zI-2sF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wu3-k5-dkf" secondAttribute="trailing" constant="30" id="LdK-GK-LCO"/>
@@ -160,6 +176,7 @@
                             <constraint firstItem="cUP-wN-Y58" firstAttribute="centerY" secondItem="WMm-5y-Hlt" secondAttribute="centerY" id="s0c-vd-M5O"/>
                             <constraint firstItem="DR5-wC-YXE" firstAttribute="leading" secondItem="Gpq-ms-GJd" secondAttribute="trailing" constant="8" id="s8l-UD-U7h"/>
                             <constraint firstItem="wu3-k5-dkf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="srU-aB-XNv"/>
+                            <constraint firstItem="IOC-E8-nzj" firstAttribute="centerX" secondItem="WMm-5y-Hlt" secondAttribute="centerX" id="uKH-6I-ke7"/>
                             <constraint firstItem="smd-Wo-Ltm" firstAttribute="top" secondItem="uaT-WF-3iG" secondAttribute="bottom" constant="3" id="xA5-K3-OtN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -180,7 +197,9 @@
                         <outlet property="btnAccount" destination="4OK-ia-4Gi" id="dQz-q7-Abm"/>
                         <outlet property="btnChoseCountry" destination="wu3-k5-dkf" id="Gjh-ES-6Qy"/>
                         <outlet property="btnConnect" destination="WMm-5y-Hlt" id="rH5-iU-oaX"/>
+                        <outlet property="imgConnect" destination="mLz-mT-Jxf" id="B3H-cY-BrE"/>
                         <outlet property="imgCountryIcon" destination="iJn-z8-UcN" id="2U2-z5-Ami"/>
+                        <outlet property="lbConnect" destination="IOC-E8-nzj" id="UNo-Pf-WPT"/>
                         <outlet property="lbNodes" destination="hb3-hP-Gvn" id="NaH-Ab-E5L"/>
                         <outlet property="vwBackHub" destination="cUP-wN-Y58" id="X6y-tr-4Fl"/>
                     </connections>
@@ -208,5 +227,6 @@
     </scenes>
     <resources>
         <image name="arrow_left_icon" width="12" height="12"/>
+        <image name="connect" width="173" height="174"/>
     </resources>
 </document>

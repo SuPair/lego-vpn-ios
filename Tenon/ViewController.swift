@@ -13,7 +13,7 @@ import Eureka
 //import TenonVPNConnection
 
 class ViewController: BaseViewController {
-    @IBOutlet weak var vwHub: UIView!
+    @IBOutlet weak var vwBackHub: CircleProgress!
     @IBOutlet weak var btnAccount: UIButton!
     @IBOutlet weak var btnConnect: UIButton!
     @IBOutlet weak var btnChoseCountry: UIButton!
@@ -23,6 +23,7 @@ class ViewController: BaseViewController {
     var popMenu:FWPopMenu!
     var isClick:Bool = false
     var timer:Timer!
+    
     var popBottomView:FWBottomPopView!
     
     override func viewDidLoad() {
@@ -34,14 +35,12 @@ class ViewController: BaseViewController {
         self.btnConnect.layer.masksToBounds = true
         self.btnConnect.layer.cornerRadius = self.btnConnect.frame.width/2
         
-        self.vwHub.layer.masksToBounds = true
-        self.vwHub.layer.cornerRadius = self.vwHub.width/2
-        
         self.btnAccount.layer.masksToBounds = true
         self.btnAccount.layer.cornerRadius = 20
         self.btnChoseCountry.layer.masksToBounds = true
         self.btnChoseCountry.layer.cornerRadius = 4
-        self.playAnimotion()
+        self.vwBackHub.proEndgress = 0.0
+        self.vwBackHub.proStartgress = 0.0
 //        let test = VpnClient()
 //        test.printSocket("123123123")
 //        VpnClient.GetSocket()
@@ -53,13 +52,15 @@ class ViewController: BaseViewController {
         }).resume()
     }
     @IBAction func clickConnect(_ sender: Any) {
-//        if self.timer == nil{
-//            self.playAnimotion()
-//        }else{
-//            self.stopAnimotion()
-//        }
-        let controller:HomePageViewController  = HomePageViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
+        if self.timer == nil {
+            self.playAnimotion()
+        }else{
+            self.stopAnimotion()
+        }
+        
+        
+//        let controller:HomePageViewController  = HomePageViewController()
+//        self.navigationController?.pushViewController(controller, animated: true)
     }
     @IBAction func clickChoseCountry(_ sender: Any) {
         if self.isClick == true {
@@ -139,30 +140,24 @@ class ViewController: BaseViewController {
         self.timer.invalidate()
         self.timer = nil
     }
-    func playAnimotion() {
+    @objc func playAnimotion() {
         if self.timer == nil {
-            self.timer = Timer(timeInterval: 0.8, target: self, selector: #selector(startAnimotion), userInfo: nil, repeats: true)
+            self.timer = Timer(timeInterval: 0.1, target: self, selector: #selector(startAnimotion), userInfo: nil, repeats: true)
             RunLoop.current.add(self.timer, forMode: RunLoop.Mode.common)
         }
     }
     @objc func startAnimotion() {
-        let offsetX:CGFloat = 0.0
-        let offsetY:CGFloat = 0.0
-        if self.isHub == false {
-            self.vwHub.transform = __CGAffineTransformMake(0.8, 0, 0, 0.8, offsetX, offsetY)
-            UIView.animate(withDuration: 0.7, animations: {
-                self.vwHub.alpha = 1.0
-                self.vwHub.transform = CGAffineTransform.identity
-            }) { (Bool) in
-                self.isHub = true
+        if self.vwBackHub.proStartgress == 0.0 {
+            self.vwBackHub.proEndgress += 0.1
+            if self.vwBackHub.proEndgress > 1{
+                self.vwBackHub.proEndgress = 1
+                self.vwBackHub.proStartgress += 0.1
             }
-        }
-        else{
-            self.vwHub.transform = __CGAffineTransformMake(1, 0, 0, 1, offsetX, offsetY)
-            UIView.animate(withDuration: 0.7, animations: {
-                self.vwHub.transform = CGAffineTransform.init(a: 0.8, b: 0, c: 0, d: 0.8, tx: offsetX, ty: offsetY)
-            }) { (Bool) in
-                self.isHub = false
+        }else{
+            self.vwBackHub.proStartgress += 0.1
+            if self.vwBackHub.proStartgress > 1.0{
+                self.vwBackHub.proEndgress = 0.0
+                self.vwBackHub.proStartgress = 0.0
             }
         }
     }

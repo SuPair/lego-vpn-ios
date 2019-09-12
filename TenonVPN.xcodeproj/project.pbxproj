@@ -76,6 +76,7 @@
 		D33FB693231F94AF004ECA2A /* Sodium.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67B231F8B15004ECA2A /* Sodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB694231F94AF004ECA2A /* tun2socks.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB67E231F8B1B004ECA2A /* tun2socks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D33FB695231F94AF004ECA2A /* Yaml.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33FB681231F8B23004ECA2A /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D340C12C2329D7E300B26902 /* CircleProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340C12B2329D7E300B26902 /* CircleProgressButton.swift */; };
 		D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34378F323289126000F1F69 /* FWBottomPopView.swift */; };
 		D34378F72328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34378F52328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift */; };
 		D34378F82328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */; };
@@ -196,6 +197,7 @@
 		D33FB67E231F8B1B004ECA2A /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
 		D33FB681231F8B23004ECA2A /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		D33FB684231F8F03004ECA2A /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		D340C12B2329D7E300B26902 /* CircleProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressButton.swift; sourceTree = "<group>"; };
 		D34378F323289126000F1F69 /* FWBottomPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWBottomPopView.swift; sourceTree = "<group>"; };
 		D34378F52328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSetHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				D34378F323289126000F1F69 /* FWBottomPopView.swift */,
 				D34378F52328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift */,
 				D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */,
+				D340C12B2329D7E300B26902 /* CircleProgressButton.swift */,
 			);
 			path = FWPopMenu;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				D30B566D23277310003E87EE /* AcountSetTestViewController.swift in Sources */,
 				D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
+				D340C12C2329D7E300B26902 /* CircleProgressButton.swift in Sources */,
 				D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */,
 				D34378F72328DDC1000F1F69 /* AccountSetHeaderTableViewCell.swift in Sources */,
 				18E9141D2266C7B4005E6027 /* AppDelegate.swift in Sources */,

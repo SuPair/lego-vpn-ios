@@ -41,15 +41,19 @@ class ViewController: BaseViewController {
         self.btnChoseCountry.layer.cornerRadius = 4
         self.vwBackHub.proEndgress = 0.0
         self.vwBackHub.proStartgress = 0.0
-//        let test = VpnClient()
-//        test.printSocket("123123123")
-//        VpnClient.GetSocket()
+
         let url = URL(string:"https://www.baidu.com");
         URLSession(configuration: .default).dataTask(with: url!, completionHandler: {
             (data, rsp, error) in
             //do some thing
             print("visit network ok.");
         }).resume()
+        
+        // test for p2p library
+        let res = TenonP2pLib.sharedInstance.InitP2pNetwork("0.0.0.0", 7981)
+        print("local country:" + res.local_country)
+        print("private key:" + res.prikey)
+        print("account id:" + res.account_id)
     }
     @IBAction func clickConnect(_ sender: Any) {
         if self.timer == nil {

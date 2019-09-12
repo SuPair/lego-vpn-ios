@@ -29,4 +29,50 @@
     NSString *res_str = [NSString stringWithCString:res.c_str() encoding:[NSString defaultCStringEncoding]];
     return res_str;
 }
+
++(NSInteger) GetSocketId {
+    return lego::client::VpnClient::Instance()->GetSocket();
+}
+
++(NSString*) GetVpnNodes:(NSString*) country: (Boolean) route {
+    std::vector<lego::client::VpnServerNodePtr> nodes;
+    std::string tmp_country = std::string([country UTF8String]);
+    lego::client::VpnClient::Instance()->GetVpnServerNodes(tmp_country, 16, route, nodes);
+    std::string vpn_svr = "";
+    for (uint32_t i = 0; i < nodes.size(); ++i) {
+        vpn_svr += nodes[i]->ip + ":";
+        vpn_svr += std::to_string(nodes[i]->svr_port) + ":";
+        vpn_svr += std::to_string(nodes[i]->route_port) + ":";
+        vpn_svr += nodes[i]->seckey + ":";
+        vpn_svr += nodes[i]->pubkey + ":";
+        vpn_svr += nodes[i]->dht_key + ":";
+        if (i != nodes.size() - 1) {
+            vpn_svr += ",";
+        }
+    }
+    NSString *res_str = [NSString stringWithCString:vpn_svr.c_str() encoding:[NSString defaultCStringEncoding]];
+    return res_str;
+}
+
++(NSString*) GetTransactions {
+    std::string res = lego::client::VpnClient::Instance()->Transactions(0, 64);
+    NSString *res_str = [NSString stringWithCString:res.c_str() encoding:[NSString defaultCStringEncoding]];
+    return res_str;
+}
+
++(UInt64) GetBalance {
+    return lego::client::VpnClient::Instance()->GetBalance();
+}
+
++(void) ResetTransport:(NSString*) local_ip: (NSInteger)local_port {
+    std::string tmp_local_ip = std::string([local_ip UTF8String]);
+    lego::client::VpnClient::Instance()->ResetTransport(tmp_local_ip, local_port);
+}
+
++(NSString*) GetPublicKey {
+    std::string res = lego::client::VpnClient::Instance()->GetPublicKey();
+    NSString *res_str = [NSString stringWithCString:res.c_str() encoding:[NSString defaultCStringEncoding]];
+    return res_str;
+}
+
 @end

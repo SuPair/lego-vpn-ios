@@ -32,6 +32,8 @@ class VpnManager{
     public var port: Int = 0
     public var password: String = ""
     public var algorithm: String = ""
+    public var public_key: String = "public_key"
+    public var enc_method: String = "enc_method"
     
     static let shared = VpnManager()
     var observerAdded: Bool = false
@@ -193,6 +195,8 @@ extension VpnManager{
         conf["ss_port"] = port as AnyObject?
         conf["ss_method"] = algorithm as AnyObject? // 大写 没有横杠 看Extension中的枚举类设定 否则引发fatal error
         conf["ss_password"] = password as AnyObject?
+        conf["ss_pubkey"] = public_key as AnyObject?
+        conf["ss_method1"] = enc_method as AnyObject?
         conf["ymal_conf"] = getRuleConf() as AnyObject?
         let orignConf = manager.protocolConfiguration as! NETunnelProviderProtocol
         orignConf.providerConfiguration = conf

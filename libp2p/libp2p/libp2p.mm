@@ -8,10 +8,74 @@
 
 #import <Foundation/Foundation.h>
 
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <iostream>
+
 #import "libp2p.h"
 #include "vpn_client.h"
 
 @implementation LibP2P
+
+NSString* method_ = @"aes-128-cfb";
+NSString* choosed_country_ = @"US";
+NSString* public_key_ = @"000000000000000000000000000000000";
+
++(NSString*) getMethod {
+    return method_;
+}
+
++(NSString*) getChoosedCountry {
+    return choosed_country_;
+}
+
++(UInt32) changeStrIp: (NSString*) ip {
+    std::string tmp_ip = std::string([ip UTF8String]);
+    struct in_addr s;
+    inet_pton(AF_INET, tmp_ip.c_str(), &s);
+    return s.s_addr;
+}
+
++ (void) SetPublicKeyEx:(NSString*) pubkey {
+    public_key_ = pubkey;
+    std::string tmp_bootstarp = std::string([public_key_ UTF8String]);
+    std::cout << "set public key: " << tmp_bootstarp << std::endl;
+}
+
++ (NSData *)HexDecode:(NSString *)hexString {
+    const char *chars = [hexString UTF8String];
+    int i = 0;
+    NSUInteger len = hexString.length;
+    
+    NSMutableData *data = [NSMutableData dataWithCapacity:len / 2];
+    char byteChars[3] = {'\0','\0','\0'};
+    unsigned long wholeByte;
+    
+    while (i < len) {
+        byteChars[0] = chars[i++];
+        byteChars[1] = chars[i++];
+        wholeByte = strtoul(byteChars, NULL, 16);
+        [data appendBytes:&wholeByte length:1];
+    }
+    
+    return data;
+}
+
++ (NSString *)HexEncode:(NSData *)data {
+    const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
+    if (!dataBuffer) {
+        return [NSString string];
+    }
+    
+    NSUInteger          dataLength  = [data length];
+    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    
+    for (int i = 0; i < dataLength; ++i) {
+        [hexString appendFormat:@"%02x", (unsigned char)dataBuffer[i]];
+    }
+    return [NSString stringWithString:hexString];
+}
 
 +(void)SayHello {
     NSLog(@"hello framework world.");

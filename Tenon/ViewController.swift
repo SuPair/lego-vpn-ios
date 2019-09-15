@@ -9,8 +9,8 @@
 import UIKit
 import NetworkExtension
 import Eureka
-
-//import TenonVPNConnection
+import NEKit
+import libp2p
 
 class ViewController: BaseViewController {
     @IBOutlet weak var imgConnect: UIImageView!
@@ -28,6 +28,11 @@ class ViewController: BaseViewController {
     var isNetChange:Bool = false
     
     var popBottomView:FWBottomPopView!
+    var local_country: String = ""
+    var local_private_key: String = ""
+    var local_account_id: String = ""
+    var countryCode:[String] = ["America", "Singapore", "Brazil","Germany","France","Korea", "Japan", "Canada","Australia","Hong Kong", "India", "England"]
+    var iCon:[String] = ["us", "sg", "br","de","fr","kr", "jp", "ca","au","hk", "in", "gb"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +58,17 @@ class ViewController: BaseViewController {
         }).resume()
         
         // test for p2p library
+        
         let res = TenonP2pLib.sharedInstance.InitP2pNetwork("0.0.0.0", 7981)
+        local_country = res.local_country
+        local_private_key = res.prikey
+        local_account_id = res.account_id
         print("local country:" + res.local_country)
         print("private key:" + res.prikey)
         print("account id:" + res.account_id)
+
         NotificationCenter.default.addObserver(self, selector: #selector(onVPNStatusChanged), name: NSNotification.Name(rawValue: kProxyServiceVPNStatusNotification), object: nil)
+ 
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -81,12 +92,50 @@ class ViewController: BaseViewController {
             self.vwBackHub.proEndgress = 0.0
             self.vwBackHub.proStartgress = 0.0
             self.playAnimotion()
-            VpnManager.shared.ip_address = "167.71.113.28"
-            VpnManager.shared.port = 10190
-            VpnManager.shared.password = "password"
-            VpnManager.shared.algorithm = "AES256CFB";
+            
+            let choosed_country = "US"
+            var route_node = getOneRouteNode(country: local_country)
+            if (route_node.ip.isEmpty) {
+                route_node = getOneRouteNode(country: choosed_country)
+                if (route_node.ip.isEmpty) {
+                    for country in self.iCon {
+                        route_node = getOneRouteNode(country: country)
+                        if (!route_node.ip.isEmpty) {
+                            break
+                        }
+                    }
+                    
+                }
+            }
+            
+            if (route_node.ip.isEmpty) {
+                return
+            }
+            VpnManager.shared.ip_address = route_node.ip
+            VpnManager.shared.port = Int(route_node.port) as! Int
+            
+            var vpn_node = getOneVpnNode(country: choosed_country)
+            if (vpn_node.ip.isEmpty) {
+                for country in self.iCon {
+                    vpn_node = getOneVpnNode(country: country)
+                    if (!vpn_node.ip.isEmpty) {
+                        break
+                    }
+                }
+            }
+            
+            if (vpn_node.ip.isEmpty) {
+                return
+            }
+            print("rotue: \(route_node.ip):\(route_node.port)")
+            print("vpn: \(vpn_node.ip):\(vpn_node.port),\(vpn_node.passwd)")
+            let vpn_ip_int = LibP2P.changeStrIp(vpn_node.ip)
+            VpnManager.shared.public_key = LibP2P.getPublicKey() as String
+            VpnManager.shared.enc_method = "aes-128-cfb," + String(vpn_ip_int) + "," + vpn_node.port
+            VpnManager.shared.password = vpn_node.passwd
+            VpnManager.shared.algorithm = "AES128CFB";
             VpnManager.shared.connect()
-        }else{
+        } else {
             self.vwBackHub.proEndgress = 0.0
             self.vwBackHub.proStartgress = 0.0
             VpnManager.shared.disconnect()
@@ -97,23 +146,20 @@ class ViewController: BaseViewController {
         if self.isClick == true {
             self.popMenu.removeFromSuperview()
         }else{
-            var countryCode:[String] = ["America", "Singapore", "Brazil","Germany","France","Korea", "Japan", "Canada","Australia","Hong Kong", "India", "England"]
-            var iCon:[String] = ["us", "sg", "br","de","fr","kr", "jp", "ca","au","hk", "in", "gb"]
-            
             self.popMenu = FWPopMenu.init(frame:CGRect(x: self.btnChoseCountry.left, y: self.btnChoseCountry.bottom, width: self.btnChoseCountry.width, height: SCREEN_HEIGHT/2))
             self.popMenu.loadCell("CountryTableViewCell", countryCode.count)
             self.popMenu.callBackBlk = {(cell,indexPath) in
                 let tempCell:CountryTableViewCell = cell as! CountryTableViewCell
                 tempCell.backgroundColor = APP_COLOR
                 tempCell.lbNodeCount.text = "123 nodes"
-                tempCell.lbCountryName.text = countryCode[indexPath.row]
-                tempCell.imgIcon.image = UIImage(named:iCon[indexPath.row])
+                tempCell.lbCountryName.text = self.countryCode[indexPath.row]
+                tempCell.imgIcon.image = UIImage(named:self.iCon[indexPath.row])
                 return tempCell
             }
             self.popMenu.clickBlck = {(idx) in
                 if idx != -1{
-                    self.btnChoseCountry.setTitle(countryCode[idx], for: UIControl.State.normal)
-                    self.imgCountryIcon.image = UIImage(named:iCon[idx])
+                    self.btnChoseCountry.setTitle(self.countryCode[idx], for: UIControl.State.normal)
+                    self.imgCountryIcon.image = UIImage(named:self.iCon[idx])
                     self.lbNodes.text = "155 nodes"
                 }
                 
@@ -165,6 +211,51 @@ class ViewController: BaseViewController {
                 self.btnAccount.isUserInteractionEnabled = !self.btnAccount.isUserInteractionEnabled
             })
         }
+    }
+    
+    func randomCustom(min: Int, max: Int) -> Int {
+        let y = arc4random() % UInt32(max) + UInt32(min)
+        return Int(y)
+    }
+    
+    func getOneRouteNode(country: String) -> (ip: String, port: String) {
+        let res_str = LibP2P.getVpnNodes(country, true) as String
+        if (res_str.isEmpty) {
+            return ("", "")
+        }
+        
+        let node_arr: Array = res_str.components(separatedBy: ",")
+        if (node_arr.count <= 0) {
+            return ("", "")
+        }
+        
+        let rand_pos = randomCustom(min: 0, max: node_arr.count)
+        let node_info_arr = node_arr[rand_pos].components(separatedBy: ":")
+        if (node_info_arr.count < 5) {
+            return ("", "")
+        }
+        
+        return (node_info_arr[0], node_info_arr[2])
+    }
+    
+    func getOneVpnNode(country: String) -> (ip: String, port: String, passwd: String) {
+        let res_str = LibP2P.getVpnNodes(country, false) as String
+        if (res_str.isEmpty) {
+            return ("", "", "")
+        }
+        
+        let node_arr: Array = res_str.components(separatedBy: ",")
+        if (node_arr.count <= 0) {
+            return ("", "", "")
+        }
+        
+        let rand_pos = randomCustom(min: 0, max: node_arr.count)
+        let node_info_arr = node_arr[rand_pos].components(separatedBy: ":")
+        if (node_info_arr.count < 5) {
+            return ("", "", "")
+        }
+        
+        return (node_info_arr[0], node_info_arr[1], node_info_arr[3])
     }
     
     func stopAnimotion() {

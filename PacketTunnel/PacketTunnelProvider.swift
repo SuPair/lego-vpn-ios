@@ -43,7 +43,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         NSLog(method)
         
         let password = conf["ss_password"] as!String
-        
+        let pubkey = conf["ss_pubkey"] as! String
+        let method1 = conf["ss_method1"] as! String
         // Proxy Adapter
         
         
@@ -68,9 +69,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             fatalError("Undefined algorithm!")
         }
         
-        
-        let ssAdapterFactory = ShadowsocksAdapterFactory(serverHost: ss_adder, serverPort: ss_port, protocolObfuscaterFactory:obfuscater, cryptorFactory: ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: password, algorithm: algorithm), streamObfuscaterFactory: ShadowsocksAdapter.StreamObfuscater.OriginStreamObfuscater.Factory())
-        
+        let cryptor = ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: password, algorithm: algorithm)
+        let ssAdapterFactory = ShadowsocksAdapterFactory(serverHost: ss_adder, serverPort: ss_port, pk: pubkey, m: method1, protocolObfuscaterFactory:obfuscater, cryptorFactory: cryptor, streamObfuscaterFactory: ShadowsocksAdapter.StreamObfuscater.OriginStreamObfuscater.Factory())
+
         let directAdapterFactory = DirectAdapterFactory()
         
         //Get lists from conf

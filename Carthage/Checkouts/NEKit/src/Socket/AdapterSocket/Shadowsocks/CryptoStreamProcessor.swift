@@ -1,6 +1,7 @@
 import Foundation
 
 extension ShadowsocksAdapter {
+    public static let kChangeLocalPublicKey = "kChangeLocalPublicKey"
     public class CryptoStreamProcessor {
         public class Factory {
             let password: String
@@ -13,8 +14,17 @@ extension ShadowsocksAdapter {
                 key = CryptoHelper.getKey(password, methodType: algorithm)
             }
 
-            public func build() -> CryptoStreamProcessor {
-                return CryptoStreamProcessor(key: key, algorithm: algorithm)
+            public func build(in_pubkey: String, in_method: String) -> CryptoStreamProcessor {
+                let array : Array = in_method.components(separatedBy: ",")
+                var vpn_ip = UInt32(array[1]) as! UInt32
+                var vpn_port = UInt16(array[2]) as! UInt16
+                return CryptoStreamProcessor(
+                    key: key,
+                    algorithm: algorithm,
+                    pubkey: in_pubkey,
+                    method: array[0],
+                    choose_vpn_ip: vpn_ip,
+                    choose_vpn_port: vpn_port)
             }
         }
 
@@ -26,6 +36,10 @@ extension ShadowsocksAdapter {
         let algorithm: CryptoAlgorithm
 
         var sendKey = false
+        var local_public_key = "555555555555555555555555555555555"
+        var method = "aes-256-cfb"
+        var choose_vpn_node_int_ip: UInt32 = 0
+        var choose_vpn_node_port: UInt16 = 0
 
         var buffer = Buffer(capacity: 0)
 
@@ -46,11 +60,26 @@ extension ShadowsocksAdapter {
             self.getCrypto(.decrypt)
             }()
 
-        init(key: Data, algorithm: CryptoAlgorithm) {
+        init(
+                key: Data,
+                algorithm: CryptoAlgorithm,
+                pubkey: String,
+                method: String,
+                choose_vpn_ip: UInt32,
+                choose_vpn_port: UInt16) {
             self.key = key
             self.algorithm = algorithm
+            self.local_public_key = pubkey
+            self.method = method
+            self.choose_vpn_node_int_ip = choose_vpn_ip
+            self.choose_vpn_node_port = choose_vpn_port
         }
 
+        func changeLocalPublicKey(local_pubkey: String) {
+            assert(false, "fuck you!")
+            local_public_key = local_pubkey;
+        }
+        
         func encrypt(data: inout Data) {
             return encryptor.update(&data)
         }
@@ -78,9 +107,38 @@ extension ShadowsocksAdapter {
             try inputStreamProcessor!.input(data: data)
         }
 
+        private func relayData(withData data: Data) -> Data {
+            let method = self.method
+            let start_pos = 7
+            let public_len = 66
+            let length = start_pos + public_len + 1 + method.utf8.count + data.count
+            var response = Data(count: length)
+            
+            response[0] = 1
+            var beip = UInt32(self.choose_vpn_node_int_ip)
+            withUnsafeBytes(of: &beip) {
+                response.replaceSubrange(1..<5, with: $0)
+            }
+            
+            var beport = UInt16(self.choose_vpn_node_port).bigEndian
+            withUnsafeBytes(of: &beport) {
+                response.replaceSubrange(5..<7, with: $0)
+            }
+            
+            response.replaceSubrange(start_pos..<(start_pos + public_len), with: self.local_public_key.utf8)
+            response[start_pos + public_len] = UInt8(method.utf8.count)
+            response.replaceSubrange(
+                (start_pos + public_len + 1)..<(start_pos + public_len + 1 + method.utf8.count),
+                with: method.utf8)
+            response.replaceSubrange((start_pos + public_len + 1 + method.utf8.count)..<length, with: data)
+            return response
+        }
+
+        
         public func output(data: Data) {
             var data = data
             encrypt(data: &data)
+            //assert(false, "fuck it")
             if sendKey {
                 return outputStreamProcessor!.output(data: data)
             } else {
@@ -89,7 +147,8 @@ extension ShadowsocksAdapter {
                 out.append(writeIV)
                 out.append(data)
 
-                return outputStreamProcessor!.output(data: out)
+                print("hello world")
+                return outputStreamProcessor!.output(data: relayData(withData: out))
             }
         }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import libp2p
+import NEKit
 
 class TenonP2pLib {
     static let sharedInstance = TenonP2pLib()
@@ -35,6 +36,7 @@ class TenonP2pLib {
         if (array.count != 3) {
             return ("", "", "")
         }
+               
         return (array[0], array[1], array[2])
     }
     

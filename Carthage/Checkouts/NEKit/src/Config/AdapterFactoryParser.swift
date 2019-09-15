@@ -99,6 +99,13 @@ struct AdapterFactoryParser {
             throw ConfigurationParserError.adapterParsingError(errorInfo: "Do not use \"ota: true\", use \"protocol: verify_sha1\" instead.")
         }
 
+        guard let in_pk = config["pubkey"].string else {
+            throw ConfigurationParserError.adapterParsingError(errorInfo: "Pubkey (pubkey) is required.")
+        }
+        guard let in_m = config["method"].string else {
+            throw ConfigurationParserError.adapterParsingError(errorInfo: "Method (method) is required.")
+        }
+        
         let proto = config["obfs"].string?.lowercased() ?? "origin"
         let stream = config["protocol"].string?.lowercased() ?? "origin"
 
@@ -146,7 +153,7 @@ struct AdapterFactoryParser {
 
         let cryptoFactory = ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: password, algorithm: algorithm)
 
-        return ShadowsocksAdapterFactory(serverHost: host, serverPort: port, protocolObfuscaterFactory: protocolObfuscaterFactory, cryptorFactory: cryptoFactory, streamObfuscaterFactory: streamObfuscaterFactory)
+        return ShadowsocksAdapterFactory(serverHost: host, serverPort: port, pk: in_pk, m:  in_m, protocolObfuscaterFactory: protocolObfuscaterFactory, cryptorFactory: cryptoFactory, streamObfuscaterFactory: streamObfuscaterFactory)
     }
 
     static func parseSpeedAdapterFactory(_ config: Yaml, factoryDict: [String:AdapterFactory]) throws -> SpeedAdapterFactory {

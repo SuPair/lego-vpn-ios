@@ -33,6 +33,8 @@ class ViewController: BaseViewController {
     var local_account_id: String = ""
     var countryCode:[String] = ["America", "Singapore", "Brazil","Germany","France","Korea", "Japan", "Canada","Australia","Hong Kong", "India", "England"]
     var iCon:[String] = ["us", "sg", "br","de","fr","kr", "jp", "ca","au","hk", "in", "gb"]
+    var local_choose_method = "aes-128-cfb"
+    var local_choose_method_ex = "AES128CFB"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,9 +133,9 @@ class ViewController: BaseViewController {
             print("vpn: \(vpn_node.ip):\(vpn_node.port),\(vpn_node.passwd)")
             let vpn_ip_int = LibP2P.changeStrIp(vpn_node.ip)
             VpnManager.shared.public_key = LibP2P.getPublicKey() as String
-            VpnManager.shared.enc_method = "aes-128-cfb," + String(vpn_ip_int) + "," + vpn_node.port
+            VpnManager.shared.enc_method = local_choose_method + "," + String(vpn_ip_int) + "," + vpn_node.port
             VpnManager.shared.password = vpn_node.passwd
-            VpnManager.shared.algorithm = "AES128CFB";
+            VpnManager.shared.algorithm = local_choose_method_ex;
             VpnManager.shared.connect()
         } else {
             self.vwBackHub.proEndgress = 0.0

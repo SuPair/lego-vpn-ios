@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "clickChoseCountry(_:)"
+            landmarkName = "clickConnect(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

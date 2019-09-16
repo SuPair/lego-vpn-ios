@@ -189,7 +189,7 @@ class ViewController: BaseViewController {
                             }
                         }
                     }
-                }
+                VpnManager.shared.disconnect()}
                 
                 var vpn_node = getOneVpnNode(country: choosed_country)
                 if (vpn_node.ip.isEmpty) {
@@ -215,9 +215,9 @@ class ViewController: BaseViewController {
                     let index:Int = Int(arc4random_uniform((UInt32)(encodeMethodList.count)))
                     VpnManager.shared.public_key = LibP2P.getPublicKey() as String
                     
-                    VpnManager.shared.enc_method = encodeMethodList[index] + "," + String(vpn_ip_int) + "," + vpn_node.port
+                    VpnManager.shared.enc_method = "aes-128-cfb," + String(vpn_ip_int) + "," + vpn_node.port
                     VpnManager.shared.password = vpn_node.passwd
-                    VpnManager.shared.algorithm = encodeMethodList[index]
+                    VpnManager.shared.algorithm = "aes-128-cfb"
                     VpnManager.shared.connect()
                 }else{
                     CBToast.showToastAction(message: "node error")
@@ -230,7 +230,7 @@ class ViewController: BaseViewController {
             self.vwBackHub.proEndgress = 0.0
             self.vwBackHub.proStartgress = 0.0
             VpnManager.shared.disconnect()
-            self.playAnimotion()
+//            self.playAnimotion()
         }
     }
     @IBAction func clickChoseCountry(_ sender: Any) {

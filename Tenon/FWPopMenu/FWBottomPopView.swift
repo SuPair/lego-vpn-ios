@@ -104,10 +104,6 @@ class FWBottomPopView: UIView,UITableViewDelegate,UITableViewDataSource,UIGestur
             return self.callBackBlk!(cell,indexPath) as! UITableViewCell
         }
     }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.clickBlck!(indexPath.row)
-//    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

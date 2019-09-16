@@ -68,7 +68,7 @@ class ViewController: BaseViewController {
         print("local country:" + res.local_country)
         print("private key:" + res.prikey)
         print("account id:" + res.account_id)
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(onVPNStatusChanged), name: NSNotification.Name(rawValue: kProxyServiceVPNStatusNotification), object: nil)
  
     }
@@ -131,6 +131,7 @@ class ViewController: BaseViewController {
             }
             print("rotue: \(route_node.ip):\(route_node.port)")
             print("vpn: \(vpn_node.ip):\(vpn_node.port),\(vpn_node.passwd)")
+            print("transactions:" + TenonP2pLib.sharedInstance.GetTransactions())
             let vpn_ip_int = LibP2P.changeStrIp(vpn_node.ip)
             VpnManager.shared.public_key = LibP2P.getPublicKey() as String
             VpnManager.shared.enc_method = local_choose_method + "," + String(vpn_ip_int) + "," + vpn_node.port

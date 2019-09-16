@@ -43,12 +43,16 @@ class ViewController: BaseViewController {
     var iCon:[String] = ["us", "sg", "br","de","fr","kr", "jp", "ca","au","hk", "in", "gb","cn"]
     let encodeMethodList:[String] = ["aes-128-cfb","aes-192-cfb","aes-256-cfb","chacha20","salsa20","rc4-md5"]
     var transcationList = [TranscationModel]()
-    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "TenonVPN"
-        self.addNavigationView()
-        self.hiddenBackBtn(bHidden: true)
+//        self.addNavigationView()
+        
+//        self.hiddenBackBtn(bHidden: true)
+        
         self.navigationController?.navigationBar.isHidden = true
         self.btnConnect.layer.masksToBounds = true
         self.btnConnect.layer.cornerRadius = self.btnConnect.frame.width/2

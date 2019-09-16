@@ -36,8 +36,8 @@ class TenonP2pLib {
         if (array.count != 3) {
             return ("", "", "")
         }
-               
-        return (array[0], array[1], array[2])
+        
+        return (array[0], array[2], array[1])
     }
     
     func GetSocketId() -> Int {

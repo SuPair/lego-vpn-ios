@@ -14,7 +14,6 @@
 		18E914272266C7B5005E6027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E914252266C7B5005E6027 /* LaunchScreen.storyboard */; };
 		18E914432266C9B3005E6027 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E914422266C9B3005E6027 /* PacketTunnelProvider.swift */; };
 		18E914482266C9B3005E6027 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18E914402266C9B3005E6027 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		18E9147422671B28005E6027 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9147322671B28005E6027 /* VpnManager.swift */; };
 		18E9149C2267220B005E6027 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9149B2267220B005E6027 /* NEKitRule.conf */; };
 		18F3C6422293D7F800D79C4A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */; };
 		18F3C6452293D7F800D79C4A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3C6442293D7F800D79C4A /* TodayViewController.swift */; };
@@ -89,6 +88,8 @@
 		D34378FD2328F22D000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
 		D34378FF2328F234000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
 		D38E584A232F72CE00D99A90 /* TranscationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5849232F72CE00D99A90 /* TranscationModel.swift */; };
+		D38E5856232F8C0B00D99A90 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5855232F8C0B00D99A90 /* VpnManager.swift */; };
+		D38E5857232F8C0B00D99A90 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5855232F8C0B00D99A90 /* VpnManager.swift */; };
 		DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */; };
 		FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */; };
 /* End PBXBuildFile section */
@@ -160,7 +161,6 @@
 		18E914442266C9B3005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E914452266C9B3005E6027 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
 		18E9144F22671181005E6027 /* Tenon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tenon.entitlements; sourceTree = "<group>"; };
-		18E9147322671B28005E6027 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		18E9149B2267220B005E6027 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		18F3C6412293D7F800D79C4A /* freeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = freeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +217,7 @@
 		D34378FB2328F226000F1F69 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		D34378FE2328F234000F1F69 /* TenonVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenonVPN.entitlements; sourceTree = "<group>"; };
 		D38E5849232F72CE00D99A90 /* TranscationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationModel.swift; sourceTree = "<group>"; };
+		D38E5855232F8C0B00D99A90 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VpnManager.swift; path = Tenon/VpnManager.swift; sourceTree = SOURCE_ROOT; };
 		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,7 +417,7 @@
 		D38E584D232F87F700D99A90 /* NetworkOperation */ = {
 			isa = PBXGroup;
 			children = (
-				18E9147322671B28005E6027 /* VpnManager.swift */,
+				D38E5855232F8C0B00D99A90 /* VpnManager.swift */,
 				852577722329ECD800BF8AF8 /* TenonP2pLib.swift */,
 			);
 			path = NetworkOperation;
@@ -746,6 +747,7 @@
 				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				D30B566D23277310003E87EE /* AcountSetTestViewController.swift in Sources */,
 				D34378F423289126000F1F69 /* FWBottomPopView.swift in Sources */,
+				D38E5856232F8C0B00D99A90 /* VpnManager.swift in Sources */,
 				18E9141F2266C7B4005E6027 /* ViewController.swift in Sources */,
 				D316BC2423224D97008C8FD3 /* AcountSetViewController.swift in Sources */,
 				852577732329ECD800BF8AF8 /* TenonP2pLib.swift in Sources */,
@@ -753,7 +755,6 @@
 				18E9141D2266C7B4005E6027 /* AppDelegate.swift in Sources */,
 				D316BC2823224F24008C8FD3 /* CountryTableViewCell.swift in Sources */,
 				8535EFCD232F6A23001ED6E8 /* CBToast.swift in Sources */,
-				18E9147422671B28005E6027 /* VpnManager.swift in Sources */,
 				D30B567323277953003E87EE /* FWPopMenu.swift in Sources */,
 				D3204B522325EA7A002ECB69 /* UITableView+Extension.swift in Sources */,
 			);
@@ -771,6 +772,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38E5857232F8C0B00D99A90 /* VpnManager.swift in Sources */,
 				18F3C6452293D7F800D79C4A /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

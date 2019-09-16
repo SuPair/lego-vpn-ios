@@ -61,7 +61,7 @@ class ViewController: BaseViewController {
         URLSession(configuration: .default).dataTask(with: url!, completionHandler: {
             (data, rsp, error) in
             //do some thing
-            print("visit network ok.");
+            print("visit network ok");
         }).resume()
         
         // test for p2p library

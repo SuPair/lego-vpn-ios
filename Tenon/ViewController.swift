@@ -13,6 +13,7 @@ import NEKit
 import libp2p
 
 class ViewController: BaseViewController {
+    @IBOutlet weak var vwCircleBack: CircleProgress!
     @IBOutlet weak var lbAccountAddress: UILabel!
     @IBOutlet weak var lbLego: UILabel!
     @IBOutlet weak var lbDolor: UILabel!
@@ -59,6 +60,9 @@ class ViewController: BaseViewController {
         self.btnChoseCountry.layer.cornerRadius = 4
         self.vwBackHub.proEndgress = 0.0
         self.vwBackHub.proStartgress = 0.0
+        
+        self.vwCircleBack.layer.masksToBounds = true
+        self.vwCircleBack.layer.cornerRadius = self.vwCircleBack.width/2
         
         let url = URL(string:"https://www.baidu.com");
         URLSession(configuration: .default).dataTask(with: url!, completionHandler: {
@@ -155,11 +159,13 @@ class ViewController: BaseViewController {
         isNetChange = true
         if VpnManager.shared.vpnStatus == .on{
             self.btnConnect.backgroundColor = APP_COLOR
+            self.vwCircleBack.backgroundColor = UIColor(rgb: 0x6FFCEB)
             self.vwBackHub.setLayerColor(color: UIColor(rgb: 0xA1FDEE))
             imgConnect.image = UIImage(named: "connected")
             lbConnect.text = "Connected"
         }else{
             self.btnConnect.backgroundColor = UIColor(rgb: 0xDAD8D9)
+            self.vwCircleBack.backgroundColor = UIColor(rgb: 0xF7f8f8)
             self.vwBackHub.setLayerColor(color: UIColor(rgb: 0xE4E2E3))
             imgConnect.image = UIImage(named: "connect")
             lbConnect.text = "Connect"

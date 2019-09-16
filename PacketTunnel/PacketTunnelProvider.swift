@@ -59,12 +59,12 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         let algorithm:CryptoAlgorithm
         
         switch method{
-        case "AES128CFB":algorithm = .AES128CFB
-        case "AES192CFB":algorithm = .AES192CFB
-        case "AES256CFB":algorithm = .AES256CFB
-        case "CHACHA20":algorithm = .CHACHA20
-        case "SALSA20":algorithm = .SALSA20
-        case "RC4MD5":algorithm = .RC4MD5
+        case "aes-128-cfb":algorithm = .AES128CFB
+        case "aes-192-cfb":algorithm = .AES192CFB
+        case "aes-256-cfb":algorithm = .AES256CFB
+        case "chacha20":algorithm = .CHACHA20
+        case "salsa20":algorithm = .SALSA20
+        case "rc4-md5":algorithm = .RC4MD5
         default:
             fatalError("Undefined algorithm!")
         }

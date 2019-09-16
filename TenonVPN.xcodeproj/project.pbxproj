@@ -89,6 +89,7 @@
 		D34378FC2328F226000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
 		D34378FD2328F22D000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
 		D34378FF2328F234000F1F69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34378FB2328F226000F1F69 /* NetworkExtension.framework */; };
+		D38E584A232F72CE00D99A90 /* TranscationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5849232F72CE00D99A90 /* TranscationModel.swift */; };
 		DB56AE96686C8BBBDFD30356 /* Pods_TenonVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66080489694AD4A941C1BB3 /* Pods_TenonVPN.framework */; };
 		FAF27737A01FDB61323194AC /* Pods_freeWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6C7F93AAC67A51C7F68EA /* Pods_freeWidget.framework */; };
 /* End PBXBuildFile section */
@@ -216,6 +217,7 @@
 		D34378F62328DDC1000F1F69 /* AccountSetHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSetHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		D34378FB2328F226000F1F69 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		D34378FE2328F234000F1F69 /* TenonVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenonVPN.entitlements; sourceTree = "<group>"; };
+		D38E5849232F72CE00D99A90 /* TranscationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationModel.swift; sourceTree = "<group>"; };
 		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,6 +335,7 @@
 				D3204B5B232635FB002ECB69 /* UIButton+Extension.swift */,
 				D30B566B23277310003E87EE /* AcountSetTestViewController.swift */,
 				D30B566C23277310003E87EE /* AcountSetTestViewController.xib */,
+				D38E5849232F72CE00D99A90 /* TranscationModel.swift */,
 			);
 			path = Tenon;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				D3204B5A232626DD002ECB69 /* BaseViewContrller.swift in Sources */,
 				85257777232A197F00BF8AF8 /* CircleProgressButton.swift in Sources */,
 				D316BB74232210C5008C8FD3 /* HomePageViewController.swift in Sources */,
+				D38E584A232F72CE00D99A90 /* TranscationModel.swift in Sources */,
 				D3204B5C232635FB002ECB69 /* UIButton+Extension.swift in Sources */,
 				D316BC2023224D86008C8FD3 /* ChoseCountryViewController.swift in Sources */,
 				D30B566D23277310003E87EE /* AcountSetTestViewController.swift in Sources */,

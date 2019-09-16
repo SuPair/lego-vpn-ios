@@ -30,6 +30,8 @@ class ViewController: BaseViewController {
     var timer:Timer!
     var isNetChange:Bool = false
     var choosed_country:String!
+    var balance:UInt64!
+    var Dolor:Double!
     
     var popBottomView:FWBottomPopView!
     var local_country: String = ""
@@ -39,6 +41,7 @@ class ViewController: BaseViewController {
     var countryNodes:[String] = []
     var iCon:[String] = ["us", "sg", "br","de","fr","kr", "jp", "ca","au","hk", "in", "gb","cn"]
     let encodeMethodList:[String] = ["aes-128-cfb","aes-192-cfb","aes-256-cfb","chacha20","salsa20","rc4-md5"]
+    var transcationList = [TranscationModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +76,7 @@ class ViewController: BaseViewController {
         local_account_id = res.account_id as String
         print("account id:" + local_account_id)
         self.lbAccountAddress.text = local_account_id
-        let balance:UInt64  = TenonP2pLib.sharedInstance.GetBalance()
-        let Dolor:Double = Double(balance)*0.002
-        self.lbLego.text = String(balance) + " Lego"
-        self.lbDolor.text = String(Dolor) + " $"
+
         print("local country:" + res.local_country)
         print("private key:" + res.prikey)
         print("account id:" + res.account_id)
@@ -90,9 +90,34 @@ class ViewController: BaseViewController {
         self.imgCountryIcon.image = UIImage(named:self.iCon[0])
         self.lbNodes.text = self.countryNodes[0]
         self.choosed_country = self.getCountryShort(countryCode: self.countryCode[0])
+        requestData()
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    @objc func requestData(){
+        transcationList.removeAll()
+        self.balance = TenonP2pLib.sharedInstance.GetBalance()
+        self.Dolor = Double(balance)*0.002
+        
+        self.lbLego.text = String(balance) + " Lego"
+        self.lbDolor.text = String(format:"%.2f $",Dolor)
+        
+        let trascationValue:String = TenonP2pLib.sharedInstance.GetTransactions()
+        let dataArray = trascationValue.components(separatedBy: ";")
+        for value in dataArray{
+            if value == ""{
+                continue
+            }
+            let model = TranscationModel()
+            let dataDetailArray = value.components(separatedBy: ",")
+            model.dateTime = dataDetailArray[0]
+            model.type = dataDetailArray[1]
+            model.acount = dataDetailArray[2]
+            model.amount = dataDetailArray[3]
+            transcationList.append(model)
+        }
+        self.perform(#selector(requestData), afterDelay: 3)
     }
     func getCountryShort(countryCode:String) -> String {
         switch countryCode {
@@ -182,7 +207,7 @@ class ViewController: BaseViewController {
                     
                     VpnManager.shared.enc_method = encodeMethodList[index] + "," + String(vpn_ip_int) + "," + vpn_node.port
                     VpnManager.shared.password = vpn_node.passwd
-                    VpnManager.shared.algorithm = encodeMethodList[index];
+                    VpnManager.shared.algorithm = encodeMethodList[index]
                     VpnManager.shared.connect()
                 }else{
                     CBToast.showToastAction(message: "node error")
@@ -235,28 +260,26 @@ class ViewController: BaseViewController {
     @IBAction func clickAccountSetting(_ sender: Any) {
         if self.btnAccount.isUserInteractionEnabled == true{
             self.popBottomView = FWBottomPopView.init(frame:CGRect(x: 0, y: SCREEN_HEIGHT - (SCREEN_HEIGHT/3*2), width: SCREEN_WIDTH, height: SCREEN_HEIGHT/3*2))
-            self.popBottomView.loadCell("AccountSetTableViewCell","AccountSetHeaderTableViewCell", 0)
+            self.popBottomView.loadCell("AccountSetTableViewCell","AccountSetHeaderTableViewCell", self.transcationList.count)
             self.popBottomView.callBackBlk = {(cell,indexPath) in
                 if indexPath.section == 0 {
                     let tempCell:AccountSetHeaderTableViewCell = cell as! AccountSetHeaderTableViewCell
                     tempCell.tfPrivateKeyValue.text = self.local_private_key
                     tempCell.lbAccountAddress.text = self.local_account_id
                     
-                    let balance:UInt64  = TenonP2pLib.sharedInstance.GetBalance()
-                    let Dolor:Double = Double(balance)*0.002
-                    
-                    tempCell.lbBalanceLego.text = String(balance) + " Lego"
-                    tempCell.lbBalanceCost.text = String(Dolor) + " $"
+                    tempCell.lbBalanceLego.text = String(self.balance) + " Lego"
+                    tempCell.lbBalanceCost.text = String(format:"%.2f $",self.Dolor)
                     return tempCell
                 }
                 else{
                     let tempCell:AccountSetTableViewCell = cell as! AccountSetTableViewCell
                     tempCell.layer.masksToBounds = true
                     tempCell.layer.cornerRadius = 8
-                    //                    tempCell.lbDateTime.text = "20190905 11:01:20"
-                    //                    tempCell.lbType.text = "TRAN"
-                    //                    tempCell.lbAccount.text = "6DCASDLKJQWIOEDANSLDJLKJQWLDNALSJD37"
-                    //                    tempCell.lbAmount.text = "4"
+                    let model:TranscationModel = self.transcationList[indexPath.row]
+                    tempCell.lbDateTime.text = model.dateTime
+                    tempCell.lbType.text = model.type
+                    tempCell.lbAccount.text = model.acount
+                    tempCell.lbAmount.text = model.amount
                     return tempCell
                 }
             }

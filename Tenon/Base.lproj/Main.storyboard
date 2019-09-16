@@ -86,7 +86,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="597 lego" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-wC-YXE">
-                                <rect key="frame" x="226" y="554" width="49.5" height="21"/>
+                                <rect key="frame" x="226" y="554" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.19$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-OL-mqm">
-                                <rect key="frame" x="283.5" y="557" width="29.5" height="15"/>
+                                <rect key="frame" x="283" y="557" width="29.5" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.58082699780000002" green="0.1872656345" blue="0.15837582950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -160,8 +160,10 @@
                             <constraint firstItem="hb3-hP-Gvn" firstAttribute="centerX" secondItem="wu3-k5-dkf" secondAttribute="centerX" id="UFr-Bp-8SC"/>
                             <constraint firstItem="iJn-z8-UcN" firstAttribute="centerY" secondItem="wu3-k5-dkf" secondAttribute="centerY" id="WAQ-zD-mAL"/>
                             <constraint firstItem="G86-7R-Ma8" firstAttribute="centerY" secondItem="DR5-wC-YXE" secondAttribute="centerY" id="WAr-xy-Th3"/>
+                            <constraint firstItem="DR5-wC-YXE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gpq-ms-GJd" secondAttribute="trailing" constant="8" id="WpM-yU-ZN8"/>
                             <constraint firstItem="G86-7R-Ma8" firstAttribute="leading" secondItem="Gpq-ms-GJd" secondAttribute="trailing" constant="61.5" id="Wt0-eu-7d9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G86-7R-Ma8" secondAttribute="trailing" constant="73.5" id="XH3-AV-GYE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C0t-OL-mqm" secondAttribute="trailing" constant="20" id="ZIO-Mx-Zp8"/>
                             <constraint firstItem="Gpq-ms-GJd" firstAttribute="leading" secondItem="smd-Wo-Ltm" secondAttribute="trailing" constant="8" id="ZzW-uQ-hut"/>
                             <constraint firstItem="wu3-k5-dkf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="bIG-dZ-Em1"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="top" secondItem="smd-Wo-Ltm" secondAttribute="bottom" constant="8" id="c7u-w6-fm6"/>
@@ -199,7 +201,10 @@
                         <outlet property="btnConnect" destination="WMm-5y-Hlt" id="rH5-iU-oaX"/>
                         <outlet property="imgConnect" destination="mLz-mT-Jxf" id="B3H-cY-BrE"/>
                         <outlet property="imgCountryIcon" destination="iJn-z8-UcN" id="2U2-z5-Ami"/>
+                        <outlet property="lbAccountAddress" destination="smd-Wo-Ltm" id="xcs-Tt-4OK"/>
                         <outlet property="lbConnect" destination="IOC-E8-nzj" id="UNo-Pf-WPT"/>
+                        <outlet property="lbDolor" destination="C0t-OL-mqm" id="vD9-rh-pXS"/>
+                        <outlet property="lbLego" destination="DR5-wC-YXE" id="xs7-qO-n1q"/>
                         <outlet property="lbNodes" destination="hb3-hP-Gvn" id="NaH-Ab-E5L"/>
                         <outlet property="vwBackHub" destination="cUP-wN-Y58" id="X6y-tr-4Fl"/>
                     </connections>

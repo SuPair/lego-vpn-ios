@@ -149,6 +149,7 @@
                     <constraint firstItem="7pT-s6-eUW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SF5-Oo-p7t"/>
                     <constraint firstAttribute="trailing" secondItem="bvN-Dp-t5y" secondAttribute="trailing" constant="16" id="SfD-yf-L5D"/>
                     <constraint firstItem="bvN-Dp-t5y" firstAttribute="top" secondItem="niP-rV-F6Q" secondAttribute="bottom" constant="8" id="SsE-FF-DYk"/>
+                    <constraint firstItem="9vY-hr-Uei" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bVk-nX-Af5" secondAttribute="trailing" constant="8" id="XO3-Lb-tLa"/>
                     <constraint firstItem="9vY-hr-Uei" firstAttribute="centerY" secondItem="bVk-nX-Af5" secondAttribute="centerY" id="YhE-9M-G3z"/>
                     <constraint firstItem="bVk-nX-Af5" firstAttribute="top" secondItem="uRd-BO-NW2" secondAttribute="bottom" constant="16" id="cfQ-dy-ckn"/>
                     <constraint firstAttribute="trailing" secondItem="uRd-BO-NW2" secondAttribute="trailing" constant="16" id="dRe-rv-isv"/>
@@ -160,6 +161,7 @@
                     <constraint firstItem="uRd-BO-NW2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mWt-FE-JIz"/>
                     <constraint firstAttribute="trailing" secondItem="jCV-ZC-kGz" secondAttribute="trailing" constant="16" id="oB1-zj-lZI"/>
                     <constraint firstItem="uRd-BO-NW2" firstAttribute="top" secondItem="IYR-hl-h05" secondAttribute="bottom" constant="8" id="oNa-qj-TKg"/>
+                    <constraint firstItem="jjV-fd-KBw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9vY-hr-Uei" secondAttribute="trailing" constant="8" id="rhd-AS-8HQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

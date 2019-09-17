@@ -1,7 +1,7 @@
 BCSymbolMap Version: 2.0
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 /Users/actantion/Library/Caches/org.carthage.CarthageKit/DerivedData/10.3_10G8/Sodium-framework/v1.0.10.1/Build/Intermediates.noindex/ArchiveIntermediates/Sodium-iOS/IntermediateBuildFilesPath/Sodium.build/Release-iphoneos/Sodium-iOS.build/DerivedSources/Sodium_vers.c
-/Users/actantion/Desktop/work/lego-vpn-ios/Carthage/Checkouts/Sodium-framework
+/Users/actantion/Desktop/work/lego-vpn-ios_bak/Carthage/Checkouts/Sodium-framework
 _crypto_core_curve25519_ref10_fe_frombytes
 _crypto_core_curve25519_ref10_fe_tobytes
 _crypto_core_curve25519_ref10_fe_mul

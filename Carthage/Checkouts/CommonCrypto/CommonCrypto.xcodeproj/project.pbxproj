@@ -244,6 +244,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 211216331AE68AD2004E1CE6;
@@ -438,6 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.commoncrypto;
 				PRODUCT_NAME = CommonCrypto;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Debug;
 		};
@@ -460,6 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.commoncrypto;
 				PRODUCT_NAME = CommonCrypto;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Release;
 		};

@@ -88,7 +88,15 @@ NSString* public_key_ = @"000000000000000000000000000000000";
     std::string tmp_conf_path = std::string([conf_path UTF8String]);
     std::string tmp_log_path = std::string([log_path UTF8String]);
     std::string tmp_log_conf_path = std::string([log_conf_path UTF8String]);
+    
     std::string res = lego::client::VpnClient::Instance()->Init(tmp_local_ip, tmp_local_port, tmp_bootstarp, tmp_conf_path, tmp_log_path, tmp_log_conf_path);
+    if (res == "ERROR") {
+        std::cout << "p2p network init res: " << res << std::endl;
+        std::cout << "tmp_log_path: " << tmp_log_path << std::endl;
+        NSString *res_str = [NSString stringWithCString:"" encoding:[NSString defaultCStringEncoding]];
+        return res_str;
+    }
+    
     std::string gid;
     lego::client::VpnClient::Instance()->Transaction("", 0, gid);
     NSString *res_str = [NSString stringWithCString:res.c_str() encoding:[NSString defaultCStringEncoding]];

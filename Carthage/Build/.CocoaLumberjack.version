@@ -1,25 +1,14 @@
 {
   "commitish" : "3.5.3",
-  "Mac" : [
-    {
-      "name" : "CocoaLumberjackSwift",
-      "hash" : "d649ec29f1259a97846b5fd26109fe47be6f36203f9ea139c8261048e4b448d9",
-      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
-    },
-    {
-      "name" : "CocoaLumberjack",
-      "hash" : "ab5dc13ef88facf7d3c7d5a8162e0e8330e6dacf8150197d34ee101167ddb137"
-    }
-  ],
   "iOS" : [
     {
       "name" : "CocoaLumberjackSwift",
-      "hash" : "e1ded589538be6093d28854cbeec635276d0df0bcb8930d1800ec58dcf76be99",
+      "hash" : "ddd6d3dede61d074b34937f37e3d7e292bddba8648620534a781c4496c670b4d",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     },
     {
       "name" : "CocoaLumberjack",
-      "hash" : "ee59665f264d87bf2ffcd5a6c6338e5ee727c98849bfe8c1fd6f153c96f800b3"
+      "hash" : "7717f51895858dc69d06f2d051763302c7b3fae710a3b0910d2fd61dbae8eb37"
     }
   ]
 }

@@ -109,11 +109,11 @@ extension ShadowsocksAdapter {
 
         private func relayData(withData data: Data) -> Data {
             let method = self.method
-            let start_pos = 7
+            let start_pos = 0
             let public_len = 66
             let length = start_pos + public_len + 1 + method.utf8.count + data.count
             var response = Data(count: length)
-            
+            /*
             response[0] = 1
             var beip = UInt32(self.choose_vpn_node_int_ip)
             withUnsafeBytes(of: &beip) {
@@ -124,7 +124,7 @@ extension ShadowsocksAdapter {
             withUnsafeBytes(of: &beport) {
                 response.replaceSubrange(5..<7, with: $0)
             }
-            
+            */
             response.replaceSubrange(start_pos..<(start_pos + public_len), with: self.local_public_key.utf8)
             response[start_pos + public_len] = UInt8(method.utf8.count)
             response.replaceSubrange(

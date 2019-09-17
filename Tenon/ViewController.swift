@@ -181,7 +181,7 @@ class ViewController: BaseViewController {
     @IBAction func clickConnect(_ sender: Any) {
         if VpnManager.shared.vpnStatus == .off {
             if choosed_country != nil{
-                var route_node = getOneRouteNode(country: local_country)
+                var route_node = getOneRouteNode(country: choosed_country)
                 if (route_node.ip.isEmpty) {
                     route_node = getOneRouteNode(country: choosed_country)
                     if (route_node.ip.isEmpty) {
@@ -209,8 +209,8 @@ class ViewController: BaseViewController {
                     self.vwBackHub.proStartgress = 0.0
                     self.playAnimotion()
                     
-                    VpnManager.shared.ip_address = route_node.ip
-                    VpnManager.shared.port = Int(route_node.port)!
+                    VpnManager.shared.ip_address = vpn_node.ip
+                    VpnManager.shared.port = Int(vpn_node.port)!
                     
                     print("rotue: \(route_node.ip):\(route_node.port)")
                     print("vpn: \(vpn_node.ip):\(vpn_node.port),\(vpn_node.passwd)")
@@ -337,7 +337,7 @@ class ViewController: BaseViewController {
             return ("", "")
         }
         
-        return (node_info_arr[0], node_info_arr[2])
+        return (node_info_arr[0], node_info_arr[1])
     }
     
     func getOneVpnNode(country: String) -> (ip: String, port: String, passwd: String) {

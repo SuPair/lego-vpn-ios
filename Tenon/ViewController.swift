@@ -106,6 +106,9 @@ class ViewController: BaseViewController {
     @objc func requestData(){
         transcationList.removeAll()
         self.balance = TenonP2pLib.sharedInstance.GetBalance()
+        if balance == UInt64.max {
+            self.balance = 0
+        }
         self.Dolor = Double(balance)*0.002
         
         self.lbLego.text = String(balance) + " Lego"

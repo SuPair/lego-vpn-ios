@@ -11,8 +11,15 @@ import NetworkExtension
 import Eureka
 import NEKit
 import libp2p
+//#import <PassKit/PassKit.h>                                 //用户绑定的银行卡信息
+//#import <PassKit/PKPaymentAuthorizationViewController.h>    //Apple pay的展示控件
+//#import <AddressBook/AddressBook.h>                         //用户联系信息相关
+import PassKit
+import AddressBook
 
-class ViewController: BaseViewController {
+class ViewController: BaseViewController,PKPaymentAuthorizationViewControllerDelegate {
+    
+    
     @IBOutlet weak var vwCircleBack: CircleProgress!
     @IBOutlet weak var lbAccountAddress: UILabel!
     @IBOutlet weak var lbLego: UILabel!
@@ -33,6 +40,8 @@ class ViewController: BaseViewController {
     var choosed_country:String!
     var balance:UInt64!
     var Dolor:Double!
+    var shippingMethods:[PKShippingMethod]!
+    var summaryItems:[PKPaymentSummaryItem]!
     
     var popBottomView:FWBottomPopView!
     var local_country: String = ""
@@ -49,10 +58,6 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "TenonVPN"
-//        self.addNavigationView()
-        
-//        self.hiddenBackBtn(bHidden: true)
-        
         self.navigationController?.navigationBar.isHidden = true
         self.btnConnect.layer.masksToBounds = true
         self.btnConnect.layer.cornerRadius = self.btnConnect.frame.width/2
@@ -103,6 +108,76 @@ class ViewController: BaseViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    @IBAction func clickApplePay(_ sender: Any) {
+        if !PKPaymentAuthorizationViewController.canMakePayments(){
+            print("设备不支持ApplePay，请升级至9.0以上版本，且iPhone6以上设备才支持")
+        }
+        let supportedNetworks:NSArray = [PKPaymentNetwork.amex, PKPaymentNetwork.masterCard,PKPaymentNetwork.visa,PKPaymentNetwork.chinaUnionPay];
+        if !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedNetworks as! [PKPaymentNetwork]) {
+            print("没有绑定支付卡");
+            return;
+        }
+        print("可以支付，开始建立支付请求");
+        let payRequest:PKPaymentRequest = PKPaymentRequest()
+        payRequest.countryCode = "US"
+        payRequest.currencyCode = "USD"
+        payRequest.merchantIdentifier = "merchant.TenonVpn.TenonCoin"
+        payRequest.supportedNetworks = supportedNetworks as! [PKPaymentNetwork]
+        payRequest.merchantCapabilities = PKMerchantCapability(rawValue: PKMerchantCapability.capability3DS.rawValue | PKMerchantCapability.capabilityEMV.rawValue)
+        //设置支持的交易处理协议，3DS必须支持，EMV为可选，目前国内的话还是使用两者吧
+        //    payRequest.requiredBillingAddressFields = PKAddressFieldEmail;
+        //如果需要邮寄账单可以选择进行设置，默认PKAddressFieldNone(不邮寄账单)
+        //楼主感觉账单邮寄地址可以事先让用户选择是否需要，否则会增加客户的输入麻烦度，体验不好，
+//        payRequest.requiredShippingAddressFields = PKAddressFieldPostalAddress|PKAddressFieldPhone|PKAddressFieldName;
+        //送货地址信息，这里设置需要地址和联系方式和姓名，如果需要进行设置，默认PKAddressFieldNone(没有送货地址)
+//        let freeShipping:PKShippingMethod = PKShippingMethod(label: "包邮", amount: NSDecimalNumber.zero)
+//        freeShipping.identifier = "freeshipping"
+//        freeShipping.detail = "1 天 送达"
+        
+//        let expressShipping:PKShippingMethod = PKShippingMethod(label: "极速送达", amount: NSDecimalNumber.init(decimal:10.00) )
+//        expressShipping.identifier = "expressshipping"
+//        expressShipping.detail = "2-3 小时 送达"
+        
+//        shippingMethods = [freeShipping]
+//        payRequest.shippingMethods = shippingMethods
+        
+        let subtotalAmount:NSDecimalNumber = NSDecimalNumber.init(decimal: 0.01)
+        let subtotal:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "商品:1000 Tenon", amount: subtotalAmount)
+        
+//        let discountAmount:NSDecimalNumber = NSDecimalNumber.init(decimal: 1000)
+//        let discount:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "收到Tenon", amount: discountAmount)
+//        
+//        let methodsAmount:NSDecimalNumber = NSDecimalNumber.zero
+//        let methods:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "包邮", amount: methodsAmount)
+        
+        var totalAmount:NSDecimalNumber = NSDecimalNumber.zero
+        totalAmount = totalAmount.adding(subtotalAmount)
+//        totalAmount = totalAmount.adding(discountAmount)
+//        totalAmount = totalAmount.adding(methodsAmount)
+        
+        let total:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "FriendWu", amount: totalAmount)
+        
+        summaryItems = [subtotal,total] // , discount, methods, total
+        payRequest.paymentSummaryItems = summaryItems
+        
+        let view:PKPaymentAuthorizationViewController = PKPaymentAuthorizationViewController(paymentRequest: payRequest)!
+        view.delegate = self
+        self.present(view, animated: true, completion: nil)
+    }
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
+//        PKPaymentToken *payToken = payment.token;
+//        //支付凭据，发给服务端进行验证支付是否真实有效
+//        PKContact *billingContact = payment.billingContact;     //账单信息
+//        PKContact *shippingContact = payment.shippingContact;   //送货信息
+//        PKContact *shippingMethod = payment.shippingMethod;     //送货方式
+//        print("payment.token = %@",payment.token)
+        print("paymentAuthorizationViewController")
+        completion(PKPaymentAuthorizationStatus.success);
+    }
+    
     @objc func requestData(){
         transcationList.removeAll()
         self.balance = TenonP2pLib.sharedInstance.GetBalance()
@@ -111,7 +186,7 @@ class ViewController: BaseViewController {
         }
         self.Dolor = Double(balance)*0.002
         
-        self.lbLego.text = String(balance) + " Lego"
+        self.lbLego.text = String(balance) + " Tenon"
         self.lbDolor.text = String(format:"%.2f $",Dolor)
         
         let trascationValue:String = TenonP2pLib.sharedInstance.GetTransactions()
@@ -280,7 +355,7 @@ class ViewController: BaseViewController {
                     tempCell.tfPrivateKeyValue.text = self.local_private_key
                     tempCell.lbAccountAddress.text = self.local_account_id
                     
-                    tempCell.lbBalanceLego.text = String(self.balance) + " Lego"
+                    tempCell.lbBalanceLego.text = String(self.balance) + " Tenon"
                     tempCell.lbBalanceCost.text = String(format:"%.2f $",self.Dolor)
                     return tempCell
                 }

@@ -162,6 +162,17 @@
                                     <constraint firstAttribute="bottom" secondItem="qwq-jt-YtR" secondAttribute="bottom" constant="11" id="tMk-hb-mkn"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7l-lE-cST">
+                                <rect key="frame" x="324" y="509" width="41" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="FQ7-GX-Fi8"/>
+                                    <constraint firstAttribute="height" constant="43" id="nB6-Ux-dBI"/>
+                                </constraints>
+                                <state key="normal" image="course_btn_shopping"/>
+                                <connections>
+                                    <action selector="clickApplePay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bew-b8-OCv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -169,12 +180,14 @@
                             <constraint firstItem="WMm-5y-Hlt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1In-S0-x4I"/>
                             <constraint firstItem="mLz-mT-Jxf" firstAttribute="centerX" secondItem="IOC-E8-nzj" secondAttribute="centerX" id="3GA-Z2-cL9"/>
                             <constraint firstItem="uaT-WF-3iG" firstAttribute="centerX" secondItem="smd-Wo-Ltm" secondAttribute="centerX" id="64o-u9-Scc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R7l-lE-cST" secondAttribute="trailing" constant="10" id="69F-h5-Ver"/>
                             <constraint firstItem="YHl-J3-WAI" firstAttribute="centerY" secondItem="wu3-k5-dkf" secondAttribute="centerY" id="6P7-Eb-da3"/>
                             <constraint firstItem="smd-Wo-Ltm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7hE-hj-OEV"/>
                             <constraint firstItem="C0t-OL-mqm" firstAttribute="leading" secondItem="DR5-wC-YXE" secondAttribute="trailing" constant="8" id="8Pb-D9-OtD"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="951-TG-0Ip"/>
                             <constraint firstItem="DR5-wC-YXE" firstAttribute="height" secondItem="smd-Wo-Ltm" secondAttribute="height" id="BQq-LX-8YH"/>
                             <constraint firstItem="XmI-eh-EA5" firstAttribute="centerX" secondItem="cUP-wN-Y58" secondAttribute="centerX" id="BwB-1J-fYF"/>
+                            <constraint firstItem="R7l-lE-cST" firstAttribute="leading" secondItem="XmI-eh-EA5" secondAttribute="trailing" constant="7.5" id="DsB-OJ-sbZ"/>
                             <constraint firstItem="IOC-E8-nzj" firstAttribute="top" secondItem="mLz-mT-Jxf" secondAttribute="bottom" constant="8" id="Ezp-ab-tgP"/>
                             <constraint firstItem="G86-7R-Ma8" firstAttribute="leading" secondItem="uaT-WF-3iG" secondAttribute="trailing" constant="-1" id="FFs-PQ-7nt"/>
                             <constraint firstItem="JAj-3M-U9V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="GST-zM-1IF"/>
@@ -201,6 +214,7 @@
                             <constraint firstItem="XmI-eh-EA5" firstAttribute="height" secondItem="cUP-wN-Y58" secondAttribute="height" id="XWr-Z1-Kb3"/>
                             <constraint firstItem="XmI-eh-EA5" firstAttribute="width" secondItem="cUP-wN-Y58" secondAttribute="width" id="YKQ-01-b5V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C0t-OL-mqm" secondAttribute="trailing" constant="20" id="ZIO-Mx-Zp8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R7l-lE-cST" secondAttribute="trailing" constant="7" id="ZYh-Sw-22V"/>
                             <constraint firstItem="Gpq-ms-GJd" firstAttribute="leading" secondItem="smd-Wo-Ltm" secondAttribute="trailing" constant="8" id="ZzW-uQ-hut"/>
                             <constraint firstItem="wu3-k5-dkf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="bIG-dZ-Em1"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="top" secondItem="smd-Wo-Ltm" secondAttribute="bottom" constant="20" id="c7u-w6-fm6"/>
@@ -210,6 +224,7 @@
                             <constraint firstItem="G86-7R-Ma8" firstAttribute="centerX" secondItem="DR5-wC-YXE" secondAttribute="centerX" id="g3j-iY-fET"/>
                             <constraint firstItem="DR5-wC-YXE" firstAttribute="top" secondItem="G86-7R-Ma8" secondAttribute="bottom" constant="3" id="hMw-tK-swI"/>
                             <constraint firstItem="cUP-wN-Y58" firstAttribute="height" secondItem="WMm-5y-Hlt" secondAttribute="height" constant="20" id="hQH-44-w7T"/>
+                            <constraint firstItem="R7l-lE-cST" firstAttribute="centerY" secondItem="G86-7R-Ma8" secondAttribute="centerY" id="ig9-3P-S5M"/>
                             <constraint firstItem="4OK-ia-4Gi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lWq-t5-BfD"/>
                             <constraint firstItem="iJn-z8-UcN" firstAttribute="centerX" secondItem="wu3-k5-dkf" secondAttribute="centerX" constant="-70" id="rg0-FB-CFl"/>
                             <constraint firstItem="cUP-wN-Y58" firstAttribute="centerY" secondItem="WMm-5y-Hlt" secondAttribute="centerY" id="s0c-vd-M5O"/>
@@ -219,16 +234,20 @@
                             <constraint firstItem="IOC-E8-nzj" firstAttribute="centerX" secondItem="WMm-5y-Hlt" secondAttribute="centerX" id="uKH-6I-ke7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JAj-3M-U9V" secondAttribute="trailing" id="w2P-go-rdh"/>
                             <constraint firstItem="smd-Wo-Ltm" firstAttribute="top" secondItem="uaT-WF-3iG" secondAttribute="bottom" constant="3" id="xA5-K3-OtN"/>
+                            <constraint firstItem="R7l-lE-cST" firstAttribute="centerY" secondItem="WMm-5y-Hlt" secondAttribute="centerY" id="ySE-Rg-jpb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="MH2-3m-Lb0"/>
+                                <exclude reference="ZYh-Sw-22V"/>
                                 <exclude reference="fIM-7J-0p5"/>
                                 <exclude reference="QL8-3D-BN6"/>
                                 <exclude reference="WAr-xy-Th3"/>
                                 <exclude reference="g3j-iY-fET"/>
                                 <exclude reference="s8l-UD-U7h"/>
+                                <exclude reference="DsB-OJ-sbZ"/>
+                                <exclude reference="ySE-Rg-jpb"/>
                             </mask>
                         </variation>
                     </view>
@@ -274,5 +293,6 @@
     <resources>
         <image name="arrow_left_icon" width="12" height="12"/>
         <image name="connect" width="173" height="174"/>
+        <image name="course_btn_shopping" width="41" height="43"/>
     </resources>
 </document>

@@ -86,6 +86,7 @@
 		D35BBDDC2330C37B0043E340 /* libp2p.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35BBDDA2330C37B0043E340 /* libp2p.framework */; };
 		D35BBDDE2330C4840043E340 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35BBDDD2330C4840043E340 /* CocoaLumberjackSwift.framework */; };
 		D35BBDDF2330D8F10043E340 /* CocoaLumberjackSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D35BBDDD2330C4840043E340 /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D35BBDE22332113A0043E340 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35BBDE12332113A0043E340 /* StoreKit.framework */; };
 		D38E584A232F72CE00D99A90 /* TranscationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5849232F72CE00D99A90 /* TranscationModel.swift */; };
 		D38E5856232F8C0B00D99A90 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5855232F8C0B00D99A90 /* VpnManager.swift */; };
 		D38E5857232F8C0B00D99A90 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E5855232F8C0B00D99A90 /* VpnManager.swift */; };
@@ -158,7 +159,6 @@
 		18E914422266C9B3005E6027 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		18E914442266C9B3005E6027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E914452266C9B3005E6027 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
-		18E9144F22671181005E6027 /* Tenon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tenon.entitlements; sourceTree = "<group>"; };
 		18E9149B2267220B005E6027 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		18F3C62D2293D7BB00D79C4A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		18F3C6412293D7F800D79C4A /* freeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = freeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +213,7 @@
 		D34378FE2328F234000F1F69 /* TenonVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenonVPN.entitlements; sourceTree = "<group>"; };
 		D35BBDDA2330C37B0043E340 /* libp2p.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libp2p.framework; path = Carthage/Build/iOS/libp2p.framework; sourceTree = "<group>"; };
 		D35BBDDD2330C4840043E340 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		D35BBDE12332113A0043E340 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D38E5849232F72CE00D99A90 /* TranscationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationModel.swift; sourceTree = "<group>"; };
 		D38E5855232F8C0B00D99A90 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VpnManager.swift; path = Tenon/VpnManager.swift; sourceTree = SOURCE_ROOT; };
 		ED6901FF968591280E6CB988 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 				D33FB670231F8AF9004ECA2A /* lwip.framework in Frameworks */,
 				D33FB67C231F8B15004ECA2A /* Sodium.framework in Frameworks */,
 				D33FB67F231F8B1B004ECA2A /* tun2socks.framework in Frameworks */,
+				D35BBDE22332113A0043E340 /* StoreKit.framework in Frameworks */,
 				D33FB682231F8B23004ECA2A /* Yaml.framework in Frameworks */,
 				D33FB66D231F8AE6004ECA2A /* CommonCrypto.framework in Frameworks */,
 				D33FB685231F8F03004ECA2A /* Eureka.framework in Frameworks */,
@@ -356,6 +358,7 @@
 		AE2E93114404A35E87606173 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D35BBDE12332113A0043E340 /* StoreKit.framework */,
 				D35BBDDA2330C37B0043E340 /* libp2p.framework */,
 				8525776E2329DC0A00BF8AF8 /* libz.1.2.11.tbd */,
 				8525776C2329DBF600BF8AF8 /* libc++.1.tbd */,
@@ -433,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				18E9149B2267220B005E6027 /* NEKitRule.conf */,
-				18E9144F22671181005E6027 /* Tenon.entitlements */,
 			);
 			path = ConfigFile;
 			sourceTree = "<group>";
@@ -553,6 +555,9 @@
 							};
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
 							};
 							com.apple.NetworkExtensions.iOS = {
 								enabled = 1;

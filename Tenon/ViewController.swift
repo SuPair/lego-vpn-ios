@@ -11,13 +11,11 @@ import NetworkExtension
 import Eureka
 import NEKit
 import libp2p
-//#import <PassKit/PassKit.h>                                 //用户绑定的银行卡信息
-//#import <PassKit/PKPaymentAuthorizationViewController.h>    //Apple pay的展示控件
-//#import <AddressBook/AddressBook.h>                         //用户联系信息相关
-import PassKit
-import AddressBook
+import StoreKit
 
-class ViewController: BaseViewController,PKPaymentAuthorizationViewControllerDelegate {
+
+
+class ViewController: BaseViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver {
     
     
     @IBOutlet weak var vwCircleBack: CircleProgress!
@@ -32,6 +30,8 @@ class ViewController: BaseViewController,PKPaymentAuthorizationViewControllerDel
     @IBOutlet weak var btnChoseCountry: UIButton!
     @IBOutlet weak var imgCountryIcon: UIImageView!
     @IBOutlet weak var lbNodes: UILabel!
+    
+    let productId = "a4d599c18b9943de8d5bc020f0b88fc7"
     var isHub:Bool = false
     var popMenu:FWPopMenu!
     var isClick:Bool = false
@@ -40,8 +40,7 @@ class ViewController: BaseViewController,PKPaymentAuthorizationViewControllerDel
     var choosed_country:String!
     var balance:UInt64!
     var Dolor:Double!
-    var shippingMethods:[PKShippingMethod]!
-    var summaryItems:[PKPaymentSummaryItem]!
+    
     
     var popBottomView:FWBottomPopView!
     var local_country: String = ""
@@ -109,75 +108,131 @@ class ViewController: BaseViewController,PKPaymentAuthorizationViewControllerDel
         NotificationCenter.default.removeObserver(self)
     }
     @IBAction func clickApplePay(_ sender: Any) {
-        if !PKPaymentAuthorizationViewController.canMakePayments(){
-            print("设备不支持ApplePay，请升级至9.0以上版本，且iPhone6以上设备才支持")
+        if IS_IN_CN == true{
+            applePayInit()
+        }else{
+            if SKPaymentQueue.canMakePayments(){
+                CBToast.showToastAction()
+                let product:NSArray = [productId]
+                let nsset:NSSet = NSSet(array: product as! [Any])
+                let request:SKProductsRequest = SKProductsRequest(productIdentifiers: nsset as! Set<String>)
+                request.delegate = self
+                request.start()
+            }else{
+                CBToast.showToastAction(message: "您的手机暂时不支持苹果内购哦!")
+            }
         }
-        let supportedNetworks:NSArray = [PKPaymentNetwork.amex, PKPaymentNetwork.masterCard,PKPaymentNetwork.visa,PKPaymentNetwork.chinaUnionPay];
-        if !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedNetworks as! [PKPaymentNetwork]) {
-            print("没有绑定支付卡");
-            return;
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SKPaymentQueue.default().add(self)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        SKPaymentQueue.default().remove(self)
+    }
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        let product:[SKProduct] = response.products
+        if product.count == 0 {
+            print("没有该商品")
+            CBToast.hiddenToastAction()
+            CBToast.showToastAction(message: "没有该商品")
+        }else{
+            var requestProduct:SKProduct!
+            for pro:SKProduct in product{
+                if pro.productIdentifier == productId{
+                    requestProduct = pro
+                }
+            }
+            let payment:SKMutablePayment = SKMutablePayment(product: requestProduct)
+            payment.applicationUsername = local_account_id+productId
+            SKPaymentQueue.default().add(payment)
         }
-        print("可以支付，开始建立支付请求");
-        let payRequest:PKPaymentRequest = PKPaymentRequest()
-        payRequest.countryCode = "US"
-        payRequest.currencyCode = "USD"
-        payRequest.merchantIdentifier = "merchant.TenonVpn.TenonCoin"
-        payRequest.supportedNetworks = supportedNetworks as! [PKPaymentNetwork]
-        payRequest.merchantCapabilities = PKMerchantCapability(rawValue: PKMerchantCapability.capability3DS.rawValue | PKMerchantCapability.capabilityEMV.rawValue)
-        //设置支持的交易处理协议，3DS必须支持，EMV为可选，目前国内的话还是使用两者吧
-        //    payRequest.requiredBillingAddressFields = PKAddressFieldEmail;
-        //如果需要邮寄账单可以选择进行设置，默认PKAddressFieldNone(不邮寄账单)
-        //楼主感觉账单邮寄地址可以事先让用户选择是否需要，否则会增加客户的输入麻烦度，体验不好，
-//        payRequest.requiredShippingAddressFields = PKAddressFieldPostalAddress|PKAddressFieldPhone|PKAddressFieldName;
-        //送货地址信息，这里设置需要地址和联系方式和姓名，如果需要进行设置，默认PKAddressFieldNone(没有送货地址)
-//        let freeShipping:PKShippingMethod = PKShippingMethod(label: "包邮", amount: NSDecimalNumber.zero)
-//        freeShipping.identifier = "freeshipping"
-//        freeShipping.detail = "1 天 送达"
-        
-//        let expressShipping:PKShippingMethod = PKShippingMethod(label: "极速送达", amount: NSDecimalNumber.init(decimal:10.00) )
-//        expressShipping.identifier = "expressshipping"
-//        expressShipping.detail = "2-3 小时 送达"
-        
-//        shippingMethods = [freeShipping]
-//        payRequest.shippingMethods = shippingMethods
-        
-        let subtotalAmount:NSDecimalNumber = NSDecimalNumber.init(decimal: 0.01)
-        let subtotal:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "商品:1000 Tenon", amount: subtotalAmount)
-        
-//        let discountAmount:NSDecimalNumber = NSDecimalNumber.init(decimal: 1000)
-//        let discount:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "收到Tenon", amount: discountAmount)
-//        
-//        let methodsAmount:NSDecimalNumber = NSDecimalNumber.zero
-//        let methods:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "包邮", amount: methodsAmount)
-        
-        var totalAmount:NSDecimalNumber = NSDecimalNumber.zero
-        totalAmount = totalAmount.adding(subtotalAmount)
-//        totalAmount = totalAmount.adding(discountAmount)
-//        totalAmount = totalAmount.adding(methodsAmount)
-        
-        let total:PKPaymentSummaryItem = PKPaymentSummaryItem(label: "FriendWu", amount: totalAmount)
-        
-        summaryItems = [subtotal,total] // , discount, methods, total
-        payRequest.paymentSummaryItems = summaryItems
-        
-        let view:PKPaymentAuthorizationViewController = PKPaymentAuthorizationViewController(paymentRequest: payRequest)!
-        view.delegate = self
-        self.present(view, animated: true, completion: nil)
     }
-    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-        controller.dismiss(animated: true, completion: nil)
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for tran:SKPaymentTransaction in transactions{
+            switch tran.transactionState{
+            case .purchased:do {
+                print("交易完成")
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "订单验证中，请稍后...")
+                SKPaymentQueue.default().finishTransaction(tran)
+                completeTransaction(transaction: tran)
+            }
+            case .purchasing:do {
+                print("商品添加进列表")
+            }
+            case .failed:do {
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "购买失败")
+                SKPaymentQueue.default().finishTransaction(tran)
+            }
+            case .restored:do {
+                print("已经购买过商品")
+            }
+            case .deferred:do {
+                print("延迟购买")
+            }
+            @unknown default:
+                print("未知错误")
+            }
+        }
     }
-    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
-//        PKPaymentToken *payToken = payment.token;
-//        //支付凭据，发给服务端进行验证支付是否真实有效
-//        PKContact *billingContact = payment.billingContact;     //账单信息
-//        PKContact *shippingContact = payment.shippingContact;   //送货信息
-//        PKContact *shippingMethod = payment.shippingMethod;     //送货方式
-//        print("payment.token = %@",payment.token)
-        print("paymentAuthorizationViewController")
-        completion(PKPaymentAuthorizationStatus.success);
+    func completeTransaction(transaction:SKPaymentTransaction) {
+        let receiptURL:NSURL = Bundle.main.appStoreReceiptURL! as NSURL
+        let receiptData:NSData! = NSData(contentsOf: receiptURL as URL)
+//        https://sandbox.itunes.apple.com/verifyReceipt
+        let url:NSURL! = NSURL(string: "https://sandbox.itunes.apple.com/verifyReceipt")
+        var urlRequest:URLRequest = URLRequest(url: url! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 15.0)
+        urlRequest.httpMethod = "POST"
+        let encodeStr:NSString = receiptData.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed) as NSString
+        let payload:NSString = NSString.localizedStringWithFormat("{\"receipt-data\" : \"%@\"}", encodeStr)
+        let payloadData:NSData = payload.data(using: String.Encoding.utf8.rawValue)! as NSData
+        urlRequest.httpBody = payloadData as Data
+        let task:URLSessionDataTask = URLSession.shared.dataTask(with: urlRequest) { (Data, URLResponse, Error) in
+
+        }
+        if task.error != nil {
+            print("验证失败")
+        }else{
+            print("验证成功")
+        }
+//        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Voidin
+//
+//                                    println("Response: \(response)")})
+//
+//
+//
+//                        task.resume()
+        
+//        if !result {
+//            print("验证失败")
+//        }else{
+//            print("验证成功")
+//        }
+        
+//        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
+//        urlRequest.HTTPMethod = @"POST";
+//        NSString *encodeStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+//        _receipt = encodeStr;
+//        NSString *payload = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\"}", encodeStr];
+//        NSData *payloadData = [payload dataUsingEncoding:NSUTF8StringEncoding];
+//        urlRequest.HTTPBody = payloadData;
+//
+//        NSData *result = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+//
+//        if (result == nil) {
+//            NSLog(@"验证失败");
+//            return;
+//        }
+//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+//        NSLog(@"请求成功后的数据:%@",dic);
+//        //这里可以通过判断 state == 0 验证凭据成功，然后进入自己服务器二次验证，,也可以直接进行服务器逻辑的判断。
+//        //本地服务器验证成功之后别忘了 [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+//
+//        NSString *productId = transaction.payment.productIdentifier;
+//        NSString *applicationUsername = transaction.payment.applicationUsername;
     }
-    
     @objc func requestData(){
         transcationList.removeAll()
         self.balance = TenonP2pLib.sharedInstance.GetBalance()

@@ -548,6 +548,9 @@
 					18E914182266C7B4005E6027 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
 							};
